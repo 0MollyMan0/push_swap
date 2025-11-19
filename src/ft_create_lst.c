@@ -1,39 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   verif_arg.c                                        :+:      :+:    :+:   */
+/*   ft_create_lst.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/15 13:10:03 by anfouger          #+#    #+#             */
-/*   Updated: 2025/11/19 11:37:24 by anfouger         ###   ########.fr       */
+/*   Created: 2025/11/19 11:42:09 by anfouger          #+#    #+#             */
+/*   Updated: 2025/11/19 11:58:17 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
-
-int verif_arg(int ac, char **av)
+void ft_create_lst()
 {
-	int i;
-	int j;
-	
-	if (ac < 2)
-		return (0);
-	i = 1;
-	while (i < ac)
-	{
-		j = 0;
-		while (av[i][j])
-		{
-			if (av[i][j] != ' ' && 
-				!(av[i][j] >= '0' && av[i][j] <= '9') && 
-				av[i][j] != '-')
-			{
-				return (0);
-			}
-			j++;
-		}
-		i++;
-	}
-	return (1);
+	// creation du premier node
+	//while
+	// creation d'un node *ft_extract_arg.c*
+		// extract la data *ft_split.c*
+		// boucle sur le tableau de tableau
+			// creer un node en lui donnant sa data *ft_new_node.c*
+	// ajouter le node a la lst
+
 }

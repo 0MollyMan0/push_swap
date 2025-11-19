@@ -1,39 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   verif_arg.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/15 13:10:03 by anfouger          #+#    #+#             */
-/*   Updated: 2025/11/19 11:37:24 by anfouger         ###   ########.fr       */
+/*   Created: 2025/10/28 11:46:12 by anfouger          #+#    #+#             */
+/*   Updated: 2025/11/19 11:38:08 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int verif_arg(int ac, char **av)
+
+t_list	*ft_lstnew(void *content)
 {
-	int i;
-	int j;
-	
-	if (ac < 2)
-		return (0);
-	i = 1;
-	while (i < ac)
-	{
-		j = 0;
-		while (av[i][j])
-		{
-			if (av[i][j] != ' ' && 
-				!(av[i][j] >= '0' && av[i][j] <= '9') && 
-				av[i][j] != '-')
-			{
-				return (0);
-			}
-			j++;
-		}
-		i++;
-	}
-	return (1);
+	t_list	*new_node;
+
+	new_node = malloc(sizeof(t_list));
+	if (!new_node)
+		return (NULL);
+	new_node->content = content;
+	new_node->next = NULL;
+	return (new_node);
 }

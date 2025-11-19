@@ -1,39 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   verif_arg.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/15 13:10:03 by anfouger          #+#    #+#             */
-/*   Updated: 2025/11/19 11:37:24 by anfouger         ###   ########.fr       */
+/*   Created: 2025/10/21 09:33:25 by anfouger          #+#    #+#             */
+/*   Updated: 2025/11/19 11:37:54 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int verif_arg(int ac, char **av)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	int i;
-	int j;
-	
-	if (ac < 2)
-		return (0);
-	i = 1;
-	while (i < ac)
+	unsigned int	i;
+	unsigned char	*s1;
+
+	i = 0;
+	s1 = (unsigned char *)s;
+	if (n == 0)
 	{
-		j = 0;
-		while (av[i][j])
+		return (NULL);
+	}
+	while (i < n)
+	{
+		if (s1[i] == (unsigned char)c)
 		{
-			if (av[i][j] != ' ' && 
-				!(av[i][j] >= '0' && av[i][j] <= '9') && 
-				av[i][j] != '-')
-			{
-				return (0);
-			}
-			j++;
+			return ((void *)s1 + i);
 		}
 		i++;
 	}
-	return (1);
+	return (NULL);
 }

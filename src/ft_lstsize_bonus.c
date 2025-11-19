@@ -1,39 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   verif_arg.c                                        :+:      :+:    :+:   */
+/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/15 13:10:03 by anfouger          #+#    #+#             */
-/*   Updated: 2025/11/19 11:37:24 by anfouger         ###   ########.fr       */
+/*   Created: 2025/10/28 11:49:56 by anfouger          #+#    #+#             */
+/*   Updated: 2025/11/19 11:38:02 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int verif_arg(int ac, char **av)
+int	ft_lstsize(t_list *lst)
 {
-	int i;
-	int j;
-	
-	if (ac < 2)
+	int	size;
+
+	size = 1;
+	if (!lst)
 		return (0);
-	i = 1;
-	while (i < ac)
+	while (lst->next)
 	{
-		j = 0;
-		while (av[i][j])
-		{
-			if (av[i][j] != ' ' && 
-				!(av[i][j] >= '0' && av[i][j] <= '9') && 
-				av[i][j] != '-')
-			{
-				return (0);
-			}
-			j++;
-		}
-		i++;
+		lst = lst->next;
+		size++;
 	}
-	return (1);
+	return (size);
 }
