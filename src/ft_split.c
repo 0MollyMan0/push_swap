@@ -6,11 +6,11 @@
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 10:52:37 by anfouger          #+#    #+#             */
-/*   Updated: 2025/11/08 12:11:39 by anfouger         ###   ########.fr       */
+/*   Updated: 2025/11/20 07:19:31 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./libft.h"
+#include "../push_swap.h"
 
 static void	free_tab(char **s)
 {

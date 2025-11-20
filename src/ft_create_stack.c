@@ -1,35 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_create_stack.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/21 09:33:25 by anfouger          #+#    #+#             */
-/*   Updated: 2025/11/19 11:37:54 by anfouger         ###   ########.fr       */
+/*   Created: 2025/11/19 11:42:09 by anfouger          #+#    #+#             */
+/*   Updated: 2025/11/20 07:37:18 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+t_stack ft_create_stack_a(int ac, char **av)
 {
-	unsigned int	i;
-	unsigned char	*s1;
-
-	i = 0;
-	s1 = (unsigned char *)s;
-	if (n == 0)
+	t_stack *stack_a;
+	int i;
+	
+	stack_a = malloc(sizeof(t_stack));
+	if (!stack_a)
+        return (NULL);
+    stack_a->top = NULL;
+    stack_a->size = 0;
+	while (i++ < ac)
 	{
-		return (NULL);
+		
 	}
-	while (i < n)
-	{
-		if (s1[i] == (unsigned char)c)
-		{
-			return ((void *)s1 + i);
-		}
-		i++;
-	}
-	return (NULL);
+	 
+	return (*stack_a);
 }

@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/14 16:20:39 by anfouger          #+#    #+#             */
-/*   Updated: 2025/11/20 07:17:33 by anfouger         ###   ########.fr       */
+/*   Created: 2025/10/28 11:51:06 by anfouger          #+#    #+#             */
+/*   Updated: 2025/11/20 07:22:47 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <unistd.h>
+#include "../push_swap.h"
 
-
-typedef struct	t_stack
+void	ft_lstadd_back(t_node **lst, t_node *new)
 {
-	struct t_node	*top;
-	void			*size;
-}					t_stack;
+	t_node	*last;
 
-typedef struct	t_node
-{
-	struct t_node	*next;
-	struct t_node	*prev;
-	void			*data;
-	void			*index;
-}					t_node;
+	if (!lst || !new)
+		return ;
+	if (!*lst)
+	{
+		*lst = new;
+		return ;
+	}
+	last = *lst;
+	while (last->next)
+		last = last->next;
+	last->next = new;
+}
