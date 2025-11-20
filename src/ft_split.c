@@ -6,13 +6,13 @@
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 10:52:37 by anfouger          #+#    #+#             */
-/*   Updated: 2025/11/20 07:19:31 by anfouger         ###   ########.fr       */
+/*   Updated: 2025/11/20 07:42:04 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-static void	free_tab(char **s)
+void	free_tab(char **s)
 {
 	int	i;
 
@@ -27,7 +27,7 @@ static void	free_tab(char **s)
 	free(s);
 }
 
-int	count_words(char const *s, char sep)
+static int	count_words(char const *s, char sep)
 {
 	int	count;
 	int	i;

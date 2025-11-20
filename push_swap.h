@@ -6,7 +6,7 @@
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 16:20:39 by anfouger          #+#    #+#             */
-/*   Updated: 2025/11/20 07:17:33 by anfouger         ###   ########.fr       */
+/*   Updated: 2025/11/20 08:05:34 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,17 @@ typedef struct	t_node
 {
 	struct t_node	*next;
 	struct t_node	*prev;
-	void			*data;
+	int				data;
 	void			*index;
 }					t_node;
+
+int verif_arg(int ac, char **av);
+void	free_tab(char **s);
+char	**ft_split(char const *s, char c);
+int	ft_lstsize(t_node *lst);
+t_node	*ft_lstlast(t_node *lst);
+void	ft_lstdelone(t_node *lst, void (*del)(void*));
+void	ft_lstadd_front(t_node **lst, t_node *new);
+void	ft_lstadd_back(t_node **lst, t_node *new);
+t_stack *ft_create_stack_a(int ac, char **av);
+t_node	*ft_create_node(int data);
