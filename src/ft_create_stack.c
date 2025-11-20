@@ -6,24 +6,20 @@
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 11:42:09 by anfouger          #+#    #+#             */
-/*   Updated: 2025/11/20 08:36:56 by anfouger         ###   ########.fr       */
+/*   Updated: 2025/11/20 08:51:58 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-#include <stdio.h>
+// #include <stdio.h>
 
-t_stack *ft_create_stack_a(int ac, char **av)
+void ft_create_stack_a(int ac, char **av, t_stack **stack_a)
 {
-	t_stack	*stack_a;
 	t_node	*new_node;
 	char **s_arg;
 	int		i;
 	int		j;
 	
-	stack_a = malloc(sizeof(t_stack));
-	if (!stack_a)
-        return (NULL);
     stack_a->top = NULL;
     stack_a->size = 0;
     i = 1;
@@ -33,7 +29,7 @@ t_stack *ft_create_stack_a(int ac, char **av)
 		j = 0;
 		while (s_arg[j])
 		{
-			new_node = ft_create_node(atoi(s_arg[j]));
+			new_node = ft_create_node(ft_atoi(s_arg[j]));
 			ft_lstadd_back(&stack_a->top, new_node);
 			stack_a->size++;
 			j++;
@@ -56,5 +52,4 @@ t_stack *ft_create_stack_a(int ac, char **av)
 		printf("%d ", tmp->data);
 		tmp = tmp->next;
 	}
-	return (stack_a);
 */
