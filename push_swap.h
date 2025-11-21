@@ -6,7 +6,7 @@
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 16:20:39 by anfouger          #+#    #+#             */
-/*   Updated: 2025/11/21 09:15:38 by anfouger         ###   ########.fr       */
+/*   Updated: 2025/11/21 09:19:25 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,3 +40,4 @@ t_stack	*ft_create_stack_a(int ac, char **av, t_stack **stack_a);
 void	ft_create_stack_b(t_stack **stack_b, int size);
 t_node	*ft_create_node(int	data, int size);
 t_stack	*ft_parsing(int ac, char **av);
+int		ft_is_same(t_stack *stack_a);
