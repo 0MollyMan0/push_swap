@@ -1,34 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_same.c                                       :+:      :+:    :+:   */
+/*   pa.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/21 09:10:30 by anfouger          #+#    #+#             */
-/*   Updated: 2025/11/21 09:53:24 by anfouger         ###   ########.fr       */
+/*   Created: 2025/11/21 10:41:47 by anfouger          #+#    #+#             */
+/*   Updated: 2025/11/21 10:41:48 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
-
-int	ft_is_same(t_stack *stack_a)
-{
-	t_node	*node_1;
-	t_node	*node_2;
-	
-	node_1 = stack_a->top;
-	while (node_1)
-	{
-		node_2 = stack_a->top;
-		while (node_2)
-		{
-			if (node_1->data == node_2->data && 
-				node_1->index != node_2->index)
-				return (1);
-			node_2 = node_2->next;
-		}
-		node_1 = node_1->next;
-	}
-	return (0);
-}
