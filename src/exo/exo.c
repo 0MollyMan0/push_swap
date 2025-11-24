@@ -73,9 +73,21 @@ void	pop(Stack **stack)
 void freeStack(Stack **stack)
 {
 	while((*stack)->top)
-	{
 		pop(&(*stack));
+}
+
+int	ifIn(Stack *stack, int target)
+{
+	Node *tmp;
+
+	tmp = stack->top;
+	while (tmp)
+	{
+		if (tmp->value == target)
+			return (1);
+		tmp = tmp->next;
 	}
+	return (0);
 }
 
 int main(int ac, char **av)
@@ -87,7 +99,7 @@ int main(int ac, char **av)
     stack = malloc(sizeof(Stack));
     initStack(&stack);
     if (stack->top == NULL)
-        printf("%s", "stack is init\n");
+        printf("%s", "stack is init\n\n");
 	
 	//test push//
     while (i < ac)
@@ -102,13 +114,13 @@ int main(int ac, char **av)
 		printf("%d\n", tmp->value);
 		tmp = tmp->next;
 	}
-	printf("valeur du top de stack = %d\n", stack->top->value);
+	printf("valeur du top de stack = %d\n\n", stack->top->value);
 	//-----------//
 
 	//test pop//
 	pop(&stack);
 	tmp = stack->top;
-	printf("%s", "\nstack apres pop:\n");
+	printf("%s", "stack apres pop:\n");
 	while (tmp)
 	{
 		printf("%d\n", tmp->value);
@@ -120,7 +132,21 @@ int main(int ac, char **av)
 	// test sizeStack //
 	stack->size = sizeStack(stack);
 	printf("stack->size = %d\n", stack->size);
-	printf("valeur du top de stack = %d\n", stack->top->value);
+	printf("valeur du top de stack = %d\n\n", stack->top->value);
+	//-----------//
+
+	// test ifIn //
+	if (ifIn(stack, 4))
+		printf("%s", "trouver dans la stack\n");
+	else
+		printf("%s", "pas trouver dans la stack\n");
+	printf("%s", "stack apres recherche:\n");
+	tmp = stack->top;
+	while (tmp)
+	{
+		printf("%d\n", tmp->value);
+		tmp = tmp->next;
+	}
 	//-----------//
 
 	// test freeStack //
