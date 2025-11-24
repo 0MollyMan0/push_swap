@@ -11,11 +11,12 @@ typedef struct node
 typedef struct stack
 {
     struct node *top;
+	int			size;
 }              Stack;
 
-void    initStack(Stack *stack)
+void    initStack(Stack **stack)
 {
-    stack->top = NULL;
+    (*stack)->top = NULL;
 }
 
 Node	*createNode(int value)
@@ -26,6 +27,21 @@ Node	*createNode(int value)
     node->value = value;
 	node->next = NULL;
 	return (node);
+}
+
+int sizeStack(Stack *stack)
+{
+	Node *tmp;
+	int i;
+
+	i = 0;
+	tmp = stack->top;
+	while (tmp)
+	{
+		tmp = tmp->next;
+		i++;
+	}
+	return (i);
 }
 
 void    push(Stack **stack, int value)
@@ -69,7 +85,7 @@ int main(int ac, char **av)
     int		i = 1;
 
     stack = malloc(sizeof(Stack));
-    initStack(stack);
+    initStack(&stack);
     if (stack->top == NULL)
         printf("%s", "stack is init\n");
 	
@@ -98,6 +114,12 @@ int main(int ac, char **av)
 		printf("%d\n", tmp->value);
 		tmp = tmp->next;
 	}
+	printf("valeur du top de stack = %d\n\n", stack->top->value);
+	//-----------//
+
+	// test sizeStack //
+	stack->size = sizeStack(stack);
+	printf("stack->size = %d\n", stack->size);
 	printf("valeur du top de stack = %d\n", stack->top->value);
 	//-----------//
 
