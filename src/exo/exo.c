@@ -45,16 +45,21 @@ void    push(Stack **stack, int value)
 	tmp->next = node;
 }
 
-int	pop(Stack **stack)
+void	pop(Stack **stack)
 {
-	int res;
 	Node *tmp;
 
-	res = (*stack)->top->value;
 	tmp = (*stack)->top;
 	(*stack)->top = (*stack)->top->next;
 	free(tmp);
-	return (res);
+}
+
+void freeStack(Stack **stack)
+{
+	while((*stack)->top)
+	{
+		pop(&(*stack));
+	}
 }
 
 int main(int ac, char **av)
@@ -95,6 +100,9 @@ int main(int ac, char **av)
 	}
 	printf("valeur du top de stack = %d\n", stack->top->value);
 	//-----------//
-    free(stack);
+
+	// test freeStack //
+	freeStack(&stack);
+	free(stack);
     return 0;
 }
