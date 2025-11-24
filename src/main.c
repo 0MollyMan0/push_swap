@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_parsing.c                                       :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/20 08:47:14 by anfouger          #+#    #+#             */
-/*   Updated: 2025/11/24 09:46:46 by anfouger         ###   ########.fr       */
+/*   Created: 2025/11/24 09:25:37 by anfouger          #+#    #+#             */
+/*   Updated: 2025/11/24 09:39:59 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include "../push_swap.h"
 
-int	ft_parsing(int ac, char **av, t_stack **stack_a, t_stack **stack_b)
+int main(int ac, char **av)
 {
 	int i;
 	char *new;
@@ -24,11 +25,6 @@ int	ft_parsing(int ac, char **av, t_stack **stack_a, t_stack **stack_b)
 		new = ft_strjoin(new, av[i]);
 		i++;
 	}
-	if (!verif_arg(ac, av))
-		return (NULL);
 	printf("%s", new);
 	return 0;
-	ft_create_stack_a(ac, av, &(*stack_a));
-	ft_create_stack_b(&(*stack_b), (*stack_a)->size);
-	return (1);
 }

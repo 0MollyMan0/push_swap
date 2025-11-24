@@ -1,34 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_parsing.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/20 08:47:14 by anfouger          #+#    #+#             */
-/*   Updated: 2025/11/24 09:46:46 by anfouger         ###   ########.fr       */
+/*   Created: 2025/10/20 07:13:49 by anfouger          #+#    #+#             */
+/*   Updated: 2025/11/24 09:40:51 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../push_swap.h"
 
-int	ft_parsing(int ac, char **av, t_stack **stack_a, t_stack **stack_b)
+size_t	ft_strlen(const char *s)
 {
-	int i;
-	char *new;
+	size_t	i;
 
-	i = 1;
-	new = NULL;
-	while (i < ac)
-	{
-		new = ft_strjoin(new, av[i]);
+	i = 0;
+	while (s[i])
 		i++;
-	}
-	if (!verif_arg(ac, av))
-		return (NULL);
-	printf("%s", new);
-	return 0;
-	ft_create_stack_a(ac, av, &(*stack_a));
-	ft_create_stack_b(&(*stack_b), (*stack_a)->size);
-	return (1);
+	return (i);
 }

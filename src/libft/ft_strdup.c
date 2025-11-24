@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_same.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/21 09:10:30 by anfouger          #+#    #+#             */
-/*   Updated: 2025/11/21 09:53:24 by anfouger         ###   ########.fr       */
+/*   Created: 2025/10/21 10:05:26 by anfouger          #+#    #+#             */
+/*   Updated: 2025/11/24 09:40:15 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../push_swap.h"
 
-int	ft_is_same(t_stack *stack_a)
+char	*ft_strdup(const char *s)
 {
-	t_node	*node_1;
-	t_node	*node_2;
-	
-	node_1 = stack_a->top;
-	while (node_1)
+	int		i;
+	char	*res;
+
+	i = ft_strlen(s);
+	res = malloc((i + 1) * sizeof(char));
+	if (!res)
+		return (NULL);
+	i = 0;
+	while (s[i])
 	{
-		node_2 = stack_a->top;
-		while (node_2)
-		{
-			if (node_1->data == node_2->data && 
-				node_1->index != node_2->index)
-				return (1);
-			node_2 = node_2->next;
-		}
-		node_1 = node_1->next;
+		res[i] = s[i];
+		i++;
 	}
-	return (0);
+	res[i] = '\0';
+	return (res);
 }
