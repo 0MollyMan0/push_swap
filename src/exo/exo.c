@@ -45,6 +45,18 @@ void    push(Stack **stack, int value)
 	tmp->next = node;
 }
 
+int	pop(Stack **stack)
+{
+	int res;
+	Node *tmp;
+
+	res = (*stack)->top->value;
+	tmp = (*stack)->top;
+	(*stack)->top = (*stack)->top->next;
+	free(tmp);
+	return (res);
+}
+
 int main(int ac, char **av)
 {
     Stack *stack;
@@ -55,6 +67,8 @@ int main(int ac, char **av)
     initStack(stack);
     if (stack->top == NULL)
         printf("%s", "stack is init\n");
+	
+	//test push//
     while (i < ac)
     {
 		push(&stack, atoi(av[i]));	
@@ -67,6 +81,20 @@ int main(int ac, char **av)
 		printf("%d\n", tmp->value);
 		tmp = tmp->next;
 	}
+	printf("valeur du top de stack = %d\n", stack->top->value);
+	//-----------//
+
+	//test pop//
+	pop(&stack);
+	tmp = stack->top;
+	printf("%s", "\nstack apres pop:\n");
+	while (tmp)
+	{
+		printf("%d\n", tmp->value);
+		tmp = tmp->next;
+	}
+	printf("valeur du top de stack = %d\n", stack->top->value);
+	//-----------//
     free(stack);
     return 0;
 }
