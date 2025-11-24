@@ -6,7 +6,7 @@
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 16:20:39 by anfouger          #+#    #+#             */
-/*   Updated: 2025/11/24 10:58:09 by anfouger         ###   ########.fr       */
+/*   Updated: 2025/11/24 12:19:14 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ typedef struct	t_node
 char	*ft_strjoin(char *s1, char *s2);
 char	*ft_strdup(const char *s);
 void	free_tab(char **s);
-int		ft_atoi(const char *str);
+int		ft_atoi(char *str);
 char	**ft_split(char const *s, char c);
 size_t	ft_strlen(const char *s);
 

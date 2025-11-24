@@ -6,11 +6,11 @@
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 07:14:34 by anfouger          #+#    #+#             */
-/*   Updated: 2025/11/08 12:00:25 by anfouger         ###   ########.fr       */
+/*   Updated: 2025/11/24 12:19:05 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(const char *str)
+int	ft_atoi(char *str)
 {
 	int	i;
 	int	pos;

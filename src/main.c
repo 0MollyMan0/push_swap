@@ -6,7 +6,7 @@
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 09:25:37 by anfouger          #+#    #+#             */
-/*   Updated: 2025/11/24 11:53:16 by anfouger         ###   ########.fr       */
+/*   Updated: 2025/11/24 12:07:07 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int main(int ac, char **av)
 	split = ft_parsing(ac, av);
 	if (!split)
 	{
-		printf("%s", "split = null");
+		printf("%s", "WRONG ARGUMENT");
 		return 0;
 	}
 	while (split[i] && split)
@@ -30,5 +30,6 @@ int main(int ac, char **av)
 		printf("split %d = %s\n", i, split[i]);
 		i++;
 	}
+	
 	return (0);
 }
