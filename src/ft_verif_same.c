@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_parsing.c                                       :+:      :+:    :+:   */
+/*   ft_verif_same.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/20 08:47:14 by anfouger          #+#    #+#             */
-/*   Updated: 2025/11/24 09:55:04 by anfouger         ###   ########.fr       */
+/*   Created: 2025/11/24 10:22:00 by anfouger          #+#    #+#             */
+/*   Updated: 2025/11/24 10:28:19 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	ft_parsing(int ac, char **av, t_stack **stack_a, t_stack **stack_b)
+int ft_verif_same(char **split)
 {
 	int i;
-	char *new;
+	int j;
 
-	i = 0;
-	new = NULL;
-	while (i++ < ac)
-		new = ft_strjoin(new, av[i]);
-	if (!verif_arg(ac, av))
-		return (NULL);
-	printf("%s", new);
-	return 0;
-	ft_create_stack_a(ac, av, &(*stack_a));
-	ft_create_stack_b(&(*stack_b), (*stack_a)->size);
+	i = 1;
+	while (split[i])
+	{
+		j = 0;
+		while (split[j])
+		{
+			if (ft_atoi(split[i]) == ft_atoi(split[j]) && i != j)
+				return (0);
+			j++;
+		}
+		i++;
+	}
 	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 16:20:39 by anfouger          #+#    #+#             */
-/*   Updated: 2025/11/24 09:40:58 by anfouger         ###   ########.fr       */
+/*   Updated: 2025/11/24 10:23:02 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,8 @@ void	ft_lstadd_front(t_node **lst, t_node *new);
 void	ft_lstadd_back(t_node **lst, t_node *new);
 
 // Push Swap
-int		verif_arg(int ac, char **av);
+int		ft_verif_num(char **split);
+int		ft_verif_same(char **split);
 t_stack	*ft_create_stack_a(int ac, char **av, t_stack **stack_a);
 void	ft_create_stack_b(t_stack **stack_b, int size);
 t_node	*ft_create_node(int	data, int index);

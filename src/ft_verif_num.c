@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   verif_arg.c                                        :+:      :+:    :+:   */
+/*   ft_verif_num.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/15 13:10:03 by anfouger          #+#    #+#             */
-/*   Updated: 2025/11/19 12:54:52 by anfouger         ###   ########.fr       */
+/*   Updated: 2025/11/24 10:24:52 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int verif_arg(int ac, char **av)
+int ft_verif_num(char **split)
 {
 	int i;
 	int j;
-	
-	if (ac < 2)
-		return (0);
-	i = 1;
-	while (i < ac)
+
+	i = 0;
+	while (split[i])
 	{
 		j = 0;
-		while (av[i][j])
+		while (split[i][j])
 		{
-			if (av[i][j] != ' ' && av[i][j] != '-' &&
-				!(av[i][j] >= '0' && av[i][j] <= '9'))
+			if (!(split[i][j] >= '0' && split[i][j] <= '9') &&
+				!(split[i][j] == '-' && j == 0))
 			{
 				return (0);
 			}
