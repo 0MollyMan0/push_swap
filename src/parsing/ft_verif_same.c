@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_verif_num.c                                     :+:      :+:    :+:   */
+/*   ft_verif_same.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/15 13:10:03 by anfouger          #+#    #+#             */
-/*   Updated: 2025/11/24 10:24:52 by anfouger         ###   ########.fr       */
+/*   Created: 2025/11/24 10:22:00 by anfouger          #+#    #+#             */
+/*   Updated: 2025/11/24 10:42:14 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../push_swap.h"
 
-int ft_verif_num(char **split)
+int ft_verif_same(char **split)
 {
 	int i;
 	int j;
 
-	i = 0;
+	i = 1;
 	while (split[i])
 	{
 		j = 0;
-		while (split[i][j])
+		while (split[j])
 		{
-			if (!(split[i][j] >= '0' && split[i][j] <= '9') &&
-				!(split[i][j] == '-' && j == 0))
-			{
+			if (ft_atoi(split[i]) == ft_atoi(split[j]) && i != j)
 				return (0);
-			}
 			j++;
 		}
 		i++;

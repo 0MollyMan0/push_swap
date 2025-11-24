@@ -6,26 +6,31 @@
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 08:47:14 by anfouger          #+#    #+#             */
-/*   Updated: 2025/11/24 09:55:04 by anfouger         ###   ########.fr       */
+/*   Updated: 2025/11/24 11:22:56 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../push_swap.h"
 
-int	ft_parsing(int ac, char **av, t_stack **stack_a, t_stack **stack_b)
+char	**ft_parsing(int ac, char **av)
 {
 	int i;
-	char *new;
+	char *join;
+	char **split;
 
-	i = 0;
-	new = NULL;
-	while (i++ < ac)
-		new = ft_strjoin(new, av[i]);
-	if (!verif_arg(ac, av))
+	i = 1;
+	join = NULL;
+	join = ft_strjoin("", av[i]);
+	while (i++ < ac - 1)
+		join = ft_strjoin(join, av[i]);
+	split = ft_split(join, ' ');
+	if (!split)
 		return (NULL);
-	printf("%s", new);
-	return 0;
-	ft_create_stack_a(ac, av, &(*stack_a));
-	ft_create_stack_b(&(*stack_b), (*stack_a)->size);
-	return (1);
+	free(join);
+	if (!ft_verif_num(split) || !ft_verif_same(split))
+	{
+		free_tab(split);
+		return (NULL);
+	}
+	return (split);
 }

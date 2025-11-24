@@ -6,7 +6,7 @@
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 09:25:37 by anfouger          #+#    #+#             */
-/*   Updated: 2025/11/24 10:29:28 by anfouger         ###   ########.fr       */
+/*   Updated: 2025/11/24 11:15:54 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,19 @@
 int main(int ac, char **av)
 {
 	int i;
-	char *join;
 	char **split;
 
 	i = 0;
-	join = NULL;
-	while (i++ < ac)
-		join = ft_strjoin(join, av[i]);
-	printf("join = %s\n", join);
-	split = ft_split(join, ' ');
-	free(join);
-	i = -1;
-	while (split[i++])
+	split = ft_parsing(ac, av);
+	if (!split)
+	{
+		printf("%s", "split = null");
+		return 0;
+	}
+	while (split[i] && split)
+	{
 		printf("split %d = %s\n", i, split[i]);
-	if (!ft_verif_num(split))
-		printf("%s", "WRONG ARGUMENT");
-	if (!ft_verif_same(split))
-		printf("%s", "SAME NUMBER DETECTED");
-	return 0;
+		i++;
+	}
+	return (0);
 }

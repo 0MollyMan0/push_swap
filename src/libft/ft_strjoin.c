@@ -6,13 +6,13 @@
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 09:57:57 by anfouger          #+#    #+#             */
-/*   Updated: 2025/11/24 09:44:27 by anfouger         ###   ########.fr       */
+/*   Updated: 2025/11/24 11:10:03 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-static void	fill_new(char const *s1, char const *s2, char *new)
+static void	fill_new(char *s1, char *s2, char *new)
 {
 	int		i;
 	int		j;
@@ -31,18 +31,14 @@ static void	fill_new(char const *s1, char const *s2, char *new)
 	new[j] = '\0';
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char *s1, char *s2)
 {
 	size_t			len_s2;
 	size_t			len_s1;
 	char			*new;
 
-	if (!s1 && !s2)
+	if (!s1 || !s2)
 		return (NULL);
-	else if (!s1)
-		s1 = ft_strdup("");
-	else if (!s2)
-		s2 = ft_strdup("");
 	len_s1 = ft_strlen(s1);
 	len_s2 = ft_strlen(s2);
 	new = malloc(sizeof(char) * (len_s2 + len_s1 + 1 + 1));
