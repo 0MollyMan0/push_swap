@@ -6,7 +6,7 @@
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 16:20:39 by anfouger          #+#    #+#             */
-/*   Updated: 2025/11/25 10:58:12 by anfouger         ###   ########.fr       */
+/*   Updated: 2025/11/25 15:15:35 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,3 +52,10 @@ t_stack *ft_create_stack_a(char **split);
 t_stack *ft_create_stack_b(int size);
 void	ft_free_stack(t_stack **stack);
 
+/*--------------Push---------------*/
+void	ra(t_stack **stack);
+void	rb(t_stack **stack);
+void	rr(t_stack **stack_a, t_stack **stack_b);
+void	rra(t_stack **stack);
+void	rrb(t_stack **stack);
+void	rrr(t_stack **stack_a, t_stack **stack_b);

@@ -28,6 +28,10 @@ SRC := \
     $(LST_DIR)/ft_lstadd_front.c \
     $(LST_DIR)/ft_lstlast.c \
     $(LST_DIR)/ft_lstsize.c \
+	$(CMD_DIR)/rotate.c \
+    $(CMD_DIR)/reverse_rotate.c \
+    $(CMD_DIR)/push.c \
+    $(CMD_DIR)/swap.c \
     $(PARSING_DIR)/ft_parsing.c \
     $(PARSING_DIR)/ft_verif_num.c \
     $(PARSING_DIR)/ft_verif_same.c

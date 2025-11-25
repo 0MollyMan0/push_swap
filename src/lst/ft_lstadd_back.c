@@ -6,7 +6,7 @@
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 11:51:06 by anfouger          #+#    #+#             */
-/*   Updated: 2025/11/25 09:57:23 by anfouger         ###   ########.fr       */
+/*   Updated: 2025/11/25 13:25:29 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void	ft_lstadd_back(t_node **lst, t_node *new, int size)
 		return ;
 	}
 	(*lst)->prev = new;
+	new->next = (*lst);
 	i = 1;
 	last = (*lst);
 	while (i++ < size)

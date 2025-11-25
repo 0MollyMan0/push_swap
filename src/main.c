@@ -6,7 +6,7 @@
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 09:25:37 by anfouger          #+#    #+#             */
-/*   Updated: 2025/11/25 11:17:41 by anfouger         ###   ########.fr       */
+/*   Updated: 2025/11/25 13:38:01 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,11 +46,25 @@ int main(int ac, char **av)
 	}
 	tmp = stack_a->top;
 	tmp2 = stack_b->top;
+	i = 0;
 	printf("\n%s\n", "Stack_a:   Stack_b: ");
-	while (tmp)
+	while (i < stack_a->size)
 	{
 		printf("data = %d   data = %d\n", tmp->data, tmp2->data);
 		tmp = tmp->next;
+		i++;
+	}
+	printf("data dernier = %d", stack_a->top->next->data);
+	r(&stack_a);
+	tmp = stack_a->top;
+	tmp2 = stack_b->top;
+	i = 0;
+	printf("\n%s\n", "Stack_a:   Stack_b: ");
+	while (i < stack_a->size)
+	{
+		printf("data = %d   data = %d\n", tmp->data, tmp2->data);
+		tmp = tmp->next;
+		i++;
 	}
 	ft_free_stack(&stack_a);
 	ft_free_stack(&stack_b);
