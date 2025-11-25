@@ -6,11 +6,11 @@
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 11:49:56 by anfouger          #+#    #+#             */
-/*   Updated: 2025/11/20 07:15:55 by anfouger         ###   ########.fr       */
+/*   Updated: 2025/11/25 07:47:40 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../push_swap.h"
 
 int	ft_lstsize(t_node *lst)
 {

@@ -6,7 +6,7 @@
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 10:22:00 by anfouger          #+#    #+#             */
-/*   Updated: 2025/11/24 10:42:14 by anfouger         ###   ########.fr       */
+/*   Updated: 2025/11/25 07:16:46 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int ft_verif_same(char **split)
 	int j;
 
 	i = 1;
+	if (!split)
+		return (0);
 	while (split[i])
 	{
 		j = 0;

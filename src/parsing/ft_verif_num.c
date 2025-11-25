@@ -6,7 +6,7 @@
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/15 13:10:03 by anfouger          #+#    #+#             */
-/*   Updated: 2025/11/24 10:42:12 by anfouger         ###   ########.fr       */
+/*   Updated: 2025/11/25 07:16:22 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int ft_verif_num(char **split)
 	int j;
 
 	i = 0;
+	if (!split)
+		return (0);
 	while (split[i])
 	{
 		j = 0;

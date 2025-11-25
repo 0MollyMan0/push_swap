@@ -6,7 +6,7 @@
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 08:47:14 by anfouger          #+#    #+#             */
-/*   Updated: 2025/11/24 11:58:04 by anfouger         ###   ########.fr       */
+/*   Updated: 2025/11/25 07:19:50 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,10 @@ char	**ft_parsing(int ac, char **av)
 	}
 	split = ft_split(join, ' ');
 	free(join);
-	if (!split)
-		return (NULL);
 	if (!ft_verif_num(split) || !ft_verif_same(split))
 	{
 		free_tab(split);
+		write(2, "Error\n", 6);
 		return (NULL);
 	}
 	return (split);
