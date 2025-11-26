@@ -6,11 +6,11 @@
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 07:13:49 by anfouger          #+#    #+#             */
-/*   Updated: 2025/11/24 09:40:51 by anfouger         ###   ########.fr       */
+/*   Updated: 2025/11/26 09:22:35 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../push_swap.h"
+#include <push_swap.h>
 
 size_t	ft_strlen(const char *s)
 {

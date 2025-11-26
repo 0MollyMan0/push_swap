@@ -6,11 +6,11 @@
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 10:22:00 by anfouger          #+#    #+#             */
-/*   Updated: 2025/11/25 07:16:46 by anfouger         ###   ########.fr       */
+/*   Updated: 2025/11/26 09:21:32 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../push_swap.h"
+#include <push_swap.h>
 
 int ft_verif_same(char **split)
 {

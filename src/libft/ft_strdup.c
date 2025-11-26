@@ -6,11 +6,11 @@
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 10:05:26 by anfouger          #+#    #+#             */
-/*   Updated: 2025/11/24 09:40:15 by anfouger         ###   ########.fr       */
+/*   Updated: 2025/11/26 09:21:59 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../push_swap.h"
+#include <push_swap.h>
 
 char	*ft_strdup(const char *s)
 {

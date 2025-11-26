@@ -6,11 +6,11 @@
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 11:37:14 by anfouger          #+#    #+#             */
-/*   Updated: 2025/11/25 15:11:46 by anfouger         ###   ########.fr       */
+/*   Updated: 2025/11/26 09:21:19 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../push_swap.h"
+#include <push_swap.h>
 
 void	rra(t_stack **stack)
 { 

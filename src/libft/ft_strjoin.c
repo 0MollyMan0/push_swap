@@ -6,11 +6,11 @@
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 09:57:57 by anfouger          #+#    #+#             */
-/*   Updated: 2025/11/24 11:10:03 by anfouger         ###   ########.fr       */
+/*   Updated: 2025/11/26 09:22:09 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../push_swap.h"
+#include <push_swap.h>
 
 static void	fill_new(char *s1, char *s2, char *new)
 {

@@ -4,7 +4,7 @@
 
 # ---- COMPILATION ----
 CC      := cc
-CFLAGS  := -Wall -Wextra -Werror -g
+CFLAGS  := -Wall -Wextra -Werror -g -I ./
 
 # ---- DIRECTORIES ----
 SRC_DIR := src

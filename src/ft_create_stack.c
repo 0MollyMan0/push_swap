@@ -6,11 +6,11 @@
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 11:42:09 by anfouger          #+#    #+#             */
-/*   Updated: 2025/11/25 10:59:27 by anfouger         ###   ########.fr       */
+/*   Updated: 2025/11/26 09:21:04 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include <push_swap.h>
 
 t_stack *ft_create_stack_a(char **split)
 {
@@ -36,27 +36,13 @@ t_stack *ft_create_stack_a(char **split)
 	return (stack_a);
 }
 
-t_stack *ft_create_stack_b(int size)
+t_stack *ft_create_stack_b()
 {
 	t_stack *stack_b;
-	t_node	*node;
-	int		i;
 
-	i = 0;
 	stack_b = malloc(sizeof(t_stack));
 	stack_b->top = NULL;
-	while (i < size)
-	{
-		node = ft_create_node(0);
-		if (!node)
-		{
-			ft_free_stack(&stack_b);
-			return (NULL);
-		}
-		ft_lstadd_back(&stack_b->top, node, stack_b->size);
-		i++;
-		stack_b->size = i;
-	}
+	stack_b->size = 0;
 	return (stack_b);
 }
 

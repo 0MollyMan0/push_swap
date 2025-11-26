@@ -6,26 +6,50 @@
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 09:25:37 by anfouger          #+#    #+#             */
-/*   Updated: 2025/11/25 17:21:09 by anfouger         ###   ########.fr       */
+/*   Updated: 2025/11/26 09:20:19 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include "../push_swap.h"
+#include <push_swap.h>
+
+static void	print_stack(t_stack	*stack)
+{
+	t_node	*tmp;
+	int		i;
+	
+	if (!stack)
+	{
+		printf("%s", "stack est NULL");
+		return ;
+	}
+	if (!stack->top)
+	{
+		printf("%s", "rien dans cette stack\n");
+		return ;
+	}
+	tmp = stack->top;
+	i = 0;
+	while (i < stack->size)
+	{
+		printf("data = %d\n", tmp->data);
+		tmp = tmp->next;
+		i++;
+	}
+}
 
 int main(int ac, char **av)
 {
-	int i;
-	char **split;
+	char	**split;
 	t_stack *stack_a;
 	t_stack *stack_b;
-	t_node	*tmp;
-	t_node	*tmp2;
+	int 	i;
 
-	i = 0;
+	printf("%s", "/*----------Debut de ce test-----------*/\n");
 	split = ft_parsing(ac, av);
 	if (!split)
 		return (0);
+	i = 0;
 	while (split[i] && split)
 	{
 		printf("split %d = %s\n", i, split[i]);
@@ -34,37 +58,42 @@ int main(int ac, char **av)
 	stack_a = ft_create_stack_a(split);
 	free_tab(split);
 	stack_b = ft_create_stack_b(stack_a->size);
-	if (!stack_a)
-	{
-		printf("%s", "stack_a est NULL");
-		return (0);
-	}
-	if (!stack_b)
-	{
-		printf("%s", "stack_a est NULL");
-		return (0);
-	}
-	tmp = stack_a->top;
-	tmp2 = stack_b->top;
-	i = 0;
-	printf("\n%s\n", "Stack_a:   Stack_b: ");
-	while (i < stack_a->size)
-	{
-		printf("data = %d   data = %d\n", tmp->data, tmp2->data);
-		tmp = tmp->next;
-		i++;
-	}
-	pa(&stack_a, &stack_b);
-	tmp = stack_a->top;
-	tmp2 = stack_b->top;
-	i = 0;
-	printf("\n%s\n", "Stack_a:   Stack_b: ");
-	while (i < stack_a->size)
-	{
-		printf("data = %d   data = %d\n", tmp->data, tmp2->data);
-		tmp = tmp->next;
-		i++;
-	}
+	printf("\n%s\n", "Stack_a:");
+	print_stack(stack_a);
+	printf("\n%s\n", "Stack_b:");
+	print_stack(stack_b);
+	
+	printf("%s", "/*----Test 3 Push A vers B----*/\n\n");
+	pb(&stack_a, &stack_b);
+	pb(&stack_a, &stack_b);
+	pb(&stack_a, &stack_b);
+	printf("\n%s\n", "Stack_a:");
+	print_stack(stack_a);
+	printf("\n%s\n", "Stack_b:");
+	print_stack(stack_b);
+	
+	printf("%s", "/*----Test Rotate A----*/\n\n");
+	ra(&stack_a);
+	printf("\n%s\n", "Stack_a:");
+	print_stack(stack_a);
+	printf("\n%s\n", "Stack_b:");
+	print_stack(stack_b);
+
+	printf("%s", "/*----Test Reverse Rotate B----*/\n\n");
+	rrb(&stack_b);
+	printf("\n%s\n", "Stack_a:");
+	print_stack(stack_a);
+	printf("\n%s\n", "Stack_b:");
+	print_stack(stack_b);
+
+	printf("%s", "/*----Test Double swap----*/\n\n");
+	ss(&stack_a, &stack_b);
+	printf("\n%s\n", "Stack_a:");
+	print_stack(stack_a);
+	printf("\n%s\n", "Stack_b:");
+	print_stack(stack_b);
+	
+	printf("%s", "/*----------Fin de ce test-----------*/\n\n");
 	ft_free_stack(&stack_a);
 	ft_free_stack(&stack_b);
 	return (0);

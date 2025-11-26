@@ -6,11 +6,11 @@
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 10:52:37 by anfouger          #+#    #+#             */
-/*   Updated: 2025/11/24 09:58:34 by anfouger         ###   ########.fr       */
+/*   Updated: 2025/11/26 09:21:55 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../push_swap.h"
+#include <push_swap.h>
 
 void	free_tab(char **s)
 {
