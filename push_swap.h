@@ -6,13 +6,13 @@
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 16:20:39 by anfouger          #+#    #+#             */
-/*   Updated: 2025/11/26 09:10:57 by anfouger         ###   ########.fr       */
+/*   Updated: 2025/11/26 11:44:11 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <unistd.h>
-
+#include <limits.h>
 
 typedef struct	t_stack
 {
@@ -45,11 +45,12 @@ void	ft_lstadd_back(t_node **lst, t_node *new, int size);
 /*-------------Parsing-------------*/
 int		ft_verif_num(char **split);
 int		ft_verif_same(char **split);
+int		ft_verif_max(char **spit);
 char	**ft_parsing(int ac, char **av);
 
 /*--------------Stack--------------*/
 t_stack *ft_create_stack_a(char **split);
-t_stack *ft_create_stack_b(int size);
+t_stack *ft_create_stack_b();
 void	ft_free_stack(t_stack **stack);
 void	ft_stack_add_front(t_stack **stack, t_node *new);
 

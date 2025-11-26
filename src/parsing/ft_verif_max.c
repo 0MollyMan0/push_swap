@@ -1,39 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_parsing.c                                       :+:      :+:    :+:   */
+/*   ft_verif_max.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/20 08:47:14 by anfouger          #+#    #+#             */
-/*   Updated: 2025/11/26 11:42:12 by anfouger         ###   ########.fr       */
+/*   Created: 2025/11/26 11:35:01 by anfouger          #+#    #+#             */
+/*   Updated: 2025/11/26 11:42:40 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 
-char	**ft_parsing(int ac, char **av)
+static int	in_int_range(char *s)
 {
-	int     i;
-	char    *join;
-	char    *tmp;
-	char    **split;
+	long long n = 0;
+	int sign = 1;
 
-	i = 1;
-	join = ft_strjoin("", av[i]);
-	while (i++ < ac - 1)
+	if (*s == '-' || *s == '+')
 	{
-		tmp = ft_strjoin(join, av[i]);
-		free(join);
-		join = tmp;
+		if (*s == '-')
+			sign = -1;
+		s++;
 	}
-	split = ft_split(join, ' ');
-	free(join);
-	if (!ft_verif_num(split) || !ft_verif_same(split) || !ft_verif_max(split))
+	while (*s)
 	{
-		free_tab(split);
-		write(2, "Error\n", 6);
-		return (NULL);
+		n = n * 10 + (*s - '0');
+		if (sign == 1 && n > INT_MAX)
+			return (0);
+		if (sign == -1 && -n < INT_MIN)
+			return (0);
+		s++;
 	}
-	return (split);
+	return (1);
+}
+
+int	ft_verif_max(char **tab)
+{
+	int i = 0;
+	while (tab[i])
+	{
+		if (!in_int_range(tab[i]))
+			return 0;
+		i++;
+	}
+	return 1;
 }

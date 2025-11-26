@@ -34,6 +34,7 @@ SRC := \
     $(CMD_DIR)/swap.c \
     $(PARSING_DIR)/ft_parsing.c \
     $(PARSING_DIR)/ft_verif_num.c \
+    $(PARSING_DIR)/ft_verif_max.c \
     $(PARSING_DIR)/ft_verif_same.c
 
 OBJ := $(SRC:.c=.o)
