@@ -6,7 +6,7 @@
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 07:34:48 by anfouger          #+#    #+#             */
-/*   Updated: 2025/11/26 09:20:37 by anfouger         ###   ########.fr       */
+/*   Updated: 2025/11/26 11:27:53 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,19 @@
 
 void	ft_free_stack(t_stack **stack)
 {
-	t_node	*tmp;
+	t_node	*next;
 	t_node	*node;
 	int		i;
 
-	i = 1;
+	i = 0;
 	node = (*stack)->top;
 	while (i < (*stack)->size)
 	{
-		tmp = node->next;
+		next = node->next;
 		node->prev = NULL;
 		node->next = NULL;
 		free(node);
-		node = tmp;
+		node = next;
 		i++;
 	}
 	free((*stack));	
