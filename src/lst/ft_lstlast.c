@@ -6,7 +6,7 @@
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 11:50:35 by anfouger          #+#    #+#             */
-/*   Updated: 2025/11/26 09:21:40 by anfouger         ###   ########.fr       */
+/*   Updated: 2025/11/28 00:59:55 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_node	*ft_lstlast(t_node *lst, int size)
 {
-	int i;
+	int	i;
 
 	i = 1;
 	if (!lst)

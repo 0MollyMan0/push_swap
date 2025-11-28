@@ -6,13 +6,13 @@
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 11:46:12 by anfouger          #+#    #+#             */
-/*   Updated: 2025/11/26 09:21:07 by anfouger         ###   ########.fr       */
+/*   Updated: 2025/11/28 01:03:17 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 
-t_node	*ft_create_node(int	data)
+t_node	*ft_create_node(int data)
 {
 	t_node	*new_node;
 

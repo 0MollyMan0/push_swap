@@ -6,18 +6,17 @@
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 11:36:09 by anfouger          #+#    #+#             */
-/*   Updated: 2025/11/26 08:53:00 by anfouger         ###   ########.fr       */
+/*   Updated: 2025/11/28 01:10:16 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 
-
 void	del_top(t_stack **stack)
 {
 	t_node	*new_top;
 	t_node	*last;
-	
+
 	new_top = (*stack)->top->next;
 	if ((*stack)->size > 1)
 	{
@@ -35,7 +34,7 @@ void	insert_top(t_stack **stack, t_node *new_top)
 {
 	t_node	*old_top;
 	t_node	*last;
-	
+
 	if ((*stack)->size == 0)
 	{
 		new_top->next = new_top;
@@ -54,10 +53,11 @@ void	insert_top(t_stack **stack, t_node *new_top)
 	}
 	(*stack)->size++;
 }
+
 void	pa(t_stack **stack_a, t_stack **stack_b)
 {
-	t_node *new_top_a;
-	
+	t_node	*new_top_a;
+
 	if (!stack_b || !(*stack_b) || (*stack_b)->size == 0)
 		return ;
 	new_top_a = (*stack_b)->top;
@@ -68,8 +68,8 @@ void	pa(t_stack **stack_a, t_stack **stack_b)
 
 void	pb(t_stack **stack_a, t_stack **stack_b)
 {
-	t_node *new_top_b;
-	
+	t_node	*new_top_b;
+
 	if (!stack_a || !(*stack_a) || (*stack_a)->size == 0)
 		return ;
 	new_top_b = (*stack_a)->top;

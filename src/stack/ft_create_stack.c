@@ -6,15 +6,15 @@
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 11:42:09 by anfouger          #+#    #+#             */
-/*   Updated: 2025/11/26 09:21:04 by anfouger         ###   ########.fr       */
+/*   Updated: 2025/11/28 01:02:23 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 
-t_stack *ft_create_stack_a(char **split)
+t_stack	*ft_create_stack_a(char **split)
 {
-	t_stack *stack_a;
+	t_stack	*stack_a;
 	t_node	*node;
 	int		i;
 
@@ -36,13 +36,12 @@ t_stack *ft_create_stack_a(char **split)
 	return (stack_a);
 }
 
-t_stack *ft_create_stack_b()
+t_stack	*ft_create_stack_b(void)
 {
-	t_stack *stack_b;
+	t_stack	*stack_b;
 
 	stack_b = malloc(sizeof(t_stack));
 	stack_b->top = NULL;
 	stack_b->size = 0;
 	return (stack_b);
 }
-

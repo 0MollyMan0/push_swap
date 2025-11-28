@@ -6,7 +6,7 @@
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 09:25:37 by anfouger          #+#    #+#             */
-/*   Updated: 2025/11/26 09:20:19 by anfouger         ###   ########.fr       */
+/*   Updated: 2025/11/28 01:20:12 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,8 @@ static void	print_stack(t_stack	*stack)
 int main(int ac, char **av)
 {
 	char	**split;
-	t_stack *stack_a;
-	t_stack *stack_b;
+	t_stack	*stack_a;
+	t_stack	*stack_b;
 	int 	i;
 
 	printf("%s", "/*----------Debut de ce test-----------*/\n");
@@ -78,7 +78,7 @@ int main(int ac, char **av)
 	print_stack(stack_a);
 	printf("\n%s\n", "Stack_b:");
 	print_stack(stack_b);
-
+	
 	printf("%s", "/*----Test Reverse Rotate B----*/\n\n");
 	rrb(&stack_b);
 	printf("\n%s\n", "Stack_a:");

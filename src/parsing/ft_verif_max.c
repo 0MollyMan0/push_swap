@@ -6,7 +6,7 @@
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 11:35:01 by anfouger          #+#    #+#             */
-/*   Updated: 2025/11/26 11:42:40 by anfouger         ###   ########.fr       */
+/*   Updated: 2025/11/28 00:57:46 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,11 @@
 
 static int	in_int_range(char *s)
 {
-	long long n = 0;
-	int sign = 1;
+	long long	n;
+	int			sign;
 
+	n = 0;
+	sign = 1;
 	if (*s == '-' || *s == '+')
 	{
 		if (*s == '-')
@@ -28,7 +30,7 @@ static int	in_int_range(char *s)
 		n = n * 10 + (*s - '0');
 		if (sign == 1 && n > INT_MAX)
 			return (0);
-		if (sign == -1 && -n < INT_MIN)
+		if (sign == -1 && - n < INT_MIN)
 			return (0);
 		s++;
 	}
@@ -37,12 +39,14 @@ static int	in_int_range(char *s)
 
 int	ft_verif_max(char **tab)
 {
-	int i = 0;
+	int	i;
+
+	i = 0;
 	while (tab[i])
 	{
 		if (!in_int_range(tab[i]))
-			return 0;
+			return (0);
 		i++;
 	}
-	return 1;
+	return (1);
 }
