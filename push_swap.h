@@ -6,13 +6,14 @@
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 16:20:39 by anfouger          #+#    #+#             */
-/*   Updated: 2025/12/03 08:27:25 by anfouger         ###   ########.fr       */
+/*   Updated: 2025/12/03 09:59:20 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <unistd.h>
 #include <limits.h>
+#include <math.h>
 
 typedef struct t_stack
 {
@@ -25,11 +26,12 @@ typedef struct t_node
 	struct t_node	*next;
 	struct t_node	*prev;
 	int				data;
+	int				index;
 }					t_node;
 
 typedef struct t_chunk
 {
-	t_chunk			*next;
+	struct t_chunk	*next;
 	int				start;
 	int				end;
 	int				size;
@@ -79,3 +81,4 @@ void	pb(t_stack **stack_a, t_stack **stack_b);
 
 /*--------------Algo---------------*/
 void	ft_indexation(t_stack **stack_a);
+t_chunk	*ft_chunking(int size);

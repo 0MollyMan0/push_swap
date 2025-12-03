@@ -46,6 +46,7 @@ SRC := \
     $(CMD_DIR)/push.c \
     $(CMD_DIR)/swap.c \
     $(ALGO_DIR)/ft_indexation.c \
+    $(ALGO_DIR)/ft_chunking.c \
     $(PARSING_DIR)/ft_parsing.c \
     $(PARSING_DIR)/ft_verif_num.c \
     $(PARSING_DIR)/ft_verif_max.c \
