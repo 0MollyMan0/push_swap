@@ -6,7 +6,7 @@
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 16:20:39 by anfouger          #+#    #+#             */
-/*   Updated: 2025/12/03 07:10:37 by anfouger         ###   ########.fr       */
+/*   Updated: 2025/12/03 08:27:25 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,16 @@ typedef struct t_node
 	struct t_node	*prev;
 	int				data;
 }					t_node;
+
+typedef struct t_chunk
+{
+	t_chunk			*next;
+	int				start;
+	int				end;
+	int				size;
+	int				count;				
+}					t_chunk;
+
 
 /*--------------Libft--------------*/
 char	*ft_strjoin(char *s1, char *s2);

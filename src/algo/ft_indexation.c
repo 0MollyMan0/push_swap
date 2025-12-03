@@ -6,7 +6,7 @@
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 07:02:46 by anfouger          #+#    #+#             */
-/*   Updated: 2025/12/03 07:21:17 by anfouger         ###   ########.fr       */
+/*   Updated: 2025/12/03 07:23:20 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_indexation(t_stack **stack_a)
 {
-	t_node *node;
-	t_node *tmp;
+	t_node	*node;
+	t_node	*tmp;
 	int		i;
 	int		j;
 	int		count;
