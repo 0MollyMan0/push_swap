@@ -6,28 +6,28 @@
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 11:51:06 by anfouger          #+#    #+#             */
-/*   Updated: 2025/11/28 01:05:11 by anfouger         ###   ########.fr       */
+/*   Updated: 2025/12/03 15:03:11 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 
-void	ft_lstadd_back(t_node **lst, t_node *new, int size)
+void	ft_lstadd_back(t_node *lst, t_node *new, int size)
 {
 	t_node	*last;
 
 	if (!lst || !new)
 		return ;
-	if (!(*lst))
+	if (!lst)
 	{
-		(*lst) = new;
+		lst = new;
 		new->next = new;
 		new->prev = new;
 		return ;
 	}
-	(*lst)->prev = new;
-	new->next = (*lst);
-	last = ft_lstlast((*lst), size);
+	lst->prev = new;
+	new->next = lst;
+	last = ft_lstlast(lst, size);
 	last->next = new;
 	new->prev = last;
 }
