@@ -6,7 +6,7 @@
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 08:20:37 by anfouger          #+#    #+#             */
-/*   Updated: 2025/12/03 11:17:35 by anfouger         ###   ########.fr       */
+/*   Updated: 2025/12/03 14:46:16 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,15 +52,16 @@ t_chunk		*ft_chunking(int size)
 	t_chunk *tmp;
 	
 	chunk_size = (int)sqrt((double)size) + 1;
-	chunk = malloc(sizeof(t_chunk));
 	chunk = NULL;
 	i  = 0;
-	while (i + chunk_size < size)
+	while (i + chunk_size <= size)
 	{
 		tmp = ft_create_chunk(i, i + chunk_size - 1, chunk_size);
 		ft_chunk_add_back(&chunk, tmp);
 		i += chunk_size;
 	}
+	if (size % chunk_size == 0)
+		return (chunk);
 	tmp = ft_create_chunk(i, size - 1, size % chunk_size);
 	ft_chunk_add_back(&chunk, tmp);
 	return (chunk);
