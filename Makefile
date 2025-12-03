@@ -63,9 +63,8 @@ NAME := push_swap
 TEST :=
 TEST += "3 3 2 1"
 TEST += "3 3- 2 1"
-TEST += "3 -3 2 1"
-TEST += "3 2 1"
 TEST += "5 1 4 2 3"
+TEST += "12 34 45 56 67 43 312 98 9 23 52 2 25" 
 # Add as many TEST += "..." as you want
 
 # ---- RULES ----
@@ -81,7 +80,7 @@ banner :
                                                                        
 
 $(NAME): $(OBJ)
-	@$(CC) $(CFLAGS) -o $@ $^
+	@$(CC) $(CFLAGS) -o $@ $^ -lm
 	@echo "$(GREEN)Compilation finished$(RESET)"
 
 %.o: %.c

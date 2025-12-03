@@ -6,7 +6,7 @@
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 16:20:39 by anfouger          #+#    #+#             */
-/*   Updated: 2025/12/03 09:59:20 by anfouger         ###   ########.fr       */
+/*   Updated: 2025/12/03 10:54:16 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,8 @@ typedef struct t_chunk
 	int				start;
 	int				end;
 	int				size;
-	int				count;				
+	int				count;
+				
 }					t_chunk;
 
 

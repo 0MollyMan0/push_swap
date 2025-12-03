@@ -6,7 +6,7 @@
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 08:20:37 by anfouger          #+#    #+#             */
-/*   Updated: 2025/12/03 09:46:28 by anfouger         ###   ########.fr       */
+/*   Updated: 2025/12/03 11:17:35 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ t_chunk		*ft_chunking(int size)
 	t_chunk	*chunk;
 	t_chunk *tmp;
 	
-	chunk_size = 10;//(int)sqrt((double)size) + 1;
+	chunk_size = (int)sqrt((double)size) + 1;
 	chunk = malloc(sizeof(t_chunk));
 	chunk = NULL;
 	i  = 0;
@@ -61,7 +61,7 @@ t_chunk		*ft_chunking(int size)
 		ft_chunk_add_back(&chunk, tmp);
 		i += chunk_size;
 	}
-	tmp = ft_create_chunk(i, size, size % chunk_size + 1);
+	tmp = ft_create_chunk(i, size - 1, size % chunk_size);
 	ft_chunk_add_back(&chunk, tmp);
 	return (chunk);
 }
