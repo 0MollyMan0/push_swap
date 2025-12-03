@@ -6,7 +6,7 @@
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 16:20:39 by anfouger          #+#    #+#             */
-/*   Updated: 2025/11/28 01:19:42 by anfouger         ###   ########.fr       */
+/*   Updated: 2025/12/03 07:10:37 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,3 +66,6 @@ void	sb(t_stack **stack);
 void	ss(t_stack **stack_a, t_stack **stack_b);
 void	pa(t_stack **stack_a, t_stack **stack_b);
 void	pb(t_stack **stack_a, t_stack **stack_b);
+
+/*--------------Algo---------------*/
+void	ft_indexation(t_stack **stack_a);

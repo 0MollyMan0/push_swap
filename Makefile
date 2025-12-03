@@ -15,9 +15,8 @@ CMD_DIR := $(SRC_DIR)/push_swap_command
 STACK_DIR := $(SRC_DIR)/stack
 ALGO_DIR := $(SRC_DIR)/algo
 
-RESET       = \033[0m
-
 # Regular Colors
+RESET       = \033[0m
 BLACK       = \033[0;30m
 RED         = \033[0;31m
 GREEN       = \033[0;32m
@@ -46,6 +45,7 @@ SRC := \
     $(CMD_DIR)/reverse_rotate.c \
     $(CMD_DIR)/push.c \
     $(CMD_DIR)/swap.c \
+    $(ALGO_DIR)/ft_indexation.c \
     $(PARSING_DIR)/ft_parsing.c \
     $(PARSING_DIR)/ft_verif_num.c \
     $(PARSING_DIR)/ft_verif_max.c \
@@ -81,18 +81,18 @@ banner :
 
 $(NAME): $(OBJ)
 	@$(CC) $(CFLAGS) -o $@ $^
-	@echo "$(GREEN)Compilation finished$(NC)"
+	@echo "$(GREEN)Compilation finished$(RESET)"
 
 %.o: %.c
 	@$(CC) $(CFLAGS) -I. -c $< -o $@
 
 clean:
 	@rm -f $(OBJ)
-	@echo "$(YELLOW)Object clean !!$(NC)"
+	@echo "$(YELLOW)Object clean !!$(RESET)"
 
 fclean: clean
 	@rm -f $(NAME)
-	@echo "$(RED)Program deleted !!$(NC)"
+	@echo "$(RED)Program deleted !!$(RESET)"
 
 re: fclean all
 
