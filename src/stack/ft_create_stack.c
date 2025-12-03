@@ -6,7 +6,7 @@
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 11:42:09 by anfouger          #+#    #+#             */
-/*   Updated: 2025/11/28 01:02:23 by anfouger         ###   ########.fr       */
+/*   Updated: 2025/12/03 11:33:32 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ t_stack	*ft_create_stack_a(char **split)
 		node = ft_create_node(ft_atoi(split[i]));
 		if (!node)
 		{
-			ft_free_stack(&stack_a);
+			ft_free_stack(stack_a);
 			return (NULL);
 		}
 		ft_lstadd_back(&stack_a->top, node, stack_a->size);

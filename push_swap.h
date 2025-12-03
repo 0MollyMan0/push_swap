@@ -6,7 +6,7 @@
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 16:20:39 by anfouger          #+#    #+#             */
-/*   Updated: 2025/12/03 10:54:16 by anfouger         ###   ########.fr       */
+/*   Updated: 2025/12/03 11:36:39 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ char	**ft_parsing(int ac, char **av);
 /*--------------Stack--------------*/
 t_stack	*ft_create_stack_a(char **split);
 t_stack	*ft_create_stack_b(void);
-void	ft_free_stack(t_stack **stack);
+void	ft_free_stack(t_stack *stack);
 void	ft_stack_add_front(t_stack **stack, t_node *new);
 
 /*--------------Push---------------*/
@@ -81,5 +81,6 @@ void	pa(t_stack **stack_a, t_stack **stack_b);
 void	pb(t_stack **stack_a, t_stack **stack_b);
 
 /*--------------Algo---------------*/
-void	ft_indexation(t_stack **stack_a);
+void	ft_indexation(t_stack *stack_a);
 t_chunk	*ft_chunking(int size);
+void	ft_free_chunk(t_chunk *chunk);

@@ -6,7 +6,7 @@
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 09:25:37 by anfouger          #+#    #+#             */
-/*   Updated: 2025/12/03 10:04:46 by anfouger         ###   ########.fr       */
+/*   Updated: 2025/12/03 11:37:16 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ int main(int ac, char **av)
 	print_stack_data(stack_b);
 
 	printf("%s", "\n/*----Test Indexation A----*/\n\n");
-	ft_indexation(&stack_a);
+	ft_indexation(stack_a);
 	printf("\n%s\n", "Stack_a:");
 	print_stack_index(stack_a);
 	printf("\n%s\n", "Stack_b:");
@@ -114,7 +114,9 @@ int main(int ac, char **av)
 	print_stack_data(stack_b);
 	
 	printf("%s", "\n/*----------Fin de ce test-----------*/\n\n");
-	ft_free_stack(&stack_a);
-	ft_free_stack(&stack_b);
+	ft_free_chunk(chunk);
+	ft_free_stack(stack_a);
+	ft_free_stack(stack_b);
+	
 	return (0);
 }

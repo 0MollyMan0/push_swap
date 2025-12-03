@@ -6,21 +6,21 @@
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 07:34:48 by anfouger          #+#    #+#             */
-/*   Updated: 2025/11/28 01:04:04 by anfouger         ###   ########.fr       */
+/*   Updated: 2025/12/03 11:32:52 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 
-void	ft_free_stack(t_stack **stack)
+void	ft_free_stack(t_stack *stack)
 {
 	t_node	*next;
 	t_node	*node;
 	int		i;
 
 	i = 0;
-	node = (*stack)->top;
-	while (i < (*stack)->size)
+	node = stack->top;
+	while (i < stack->size)
 	{
 		next = node->next;
 		node->prev = NULL;
@@ -29,5 +29,5 @@ void	ft_free_stack(t_stack **stack)
 		node = next;
 		i++;
 	}
-	free((*stack));
+	free(stack);
 }
