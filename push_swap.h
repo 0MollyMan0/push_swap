@@ -6,7 +6,7 @@
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 16:20:39 by anfouger          #+#    #+#             */
-/*   Updated: 2025/12/03 15:05:43 by anfouger         ###   ########.fr       */
+/*   Updated: 2025/12/03 11:36:39 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,8 @@ size_t	ft_strlen(const char *s);
 t_node	*ft_create_node(int data);
 int		ft_lstsize(t_node *lst);
 t_node	*ft_lstlast(t_node *lst, int size);
-void	ft_lstadd_front(t_node *lst, t_node *new);
-void	ft_lstadd_back(t_node *lst, t_node *new, int size);
+void	ft_lstadd_front(t_node **lst, t_node *new);
+void	ft_lstadd_back(t_node **lst, t_node *new, int size);
 
 /*-------------Parsing-------------*/
 int		ft_verif_num(char **split);
@@ -65,20 +65,20 @@ char	**ft_parsing(int ac, char **av);
 t_stack	*ft_create_stack_a(char **split);
 t_stack	*ft_create_stack_b(void);
 void	ft_free_stack(t_stack *stack);
-void	ft_stack_add_front(t_stack *stack, t_node *new);
+void	ft_stack_add_front(t_stack **stack, t_node *new);
 
 /*--------------Push---------------*/
-void	ra(t_stack *stack);
-void	rb(t_stack *stack);
-void	rr(t_stack *stack_a, t_stack *stack_b);
-void	rra(t_stack *stack);
-void	rrb(t_stack *stack);
-void	rrr(t_stack *stack_a, t_stack *stack_b);
-void	sa(t_stack *stack);
-void	sb(t_stack *stack);
-void	ss(t_stack *stack_a, t_stack *stack_b);
-void	pa(t_stack *stack_a, t_stack *stack_b);
-void	pb(t_stack *stack_a, t_stack *stack_b);
+void	ra(t_stack **stack);
+void	rb(t_stack **stack);
+void	rr(t_stack **stack_a, t_stack **stack_b);
+void	rra(t_stack **stack);
+void	rrb(t_stack **stack);
+void	rrr(t_stack **stack_a, t_stack **stack_b);
+void	sa(t_stack **stack);
+void	sb(t_stack **stack);
+void	ss(t_stack **stack_a, t_stack **stack_b);
+void	pa(t_stack **stack_a, t_stack **stack_b);
+void	pb(t_stack **stack_a, t_stack **stack_b);
 
 /*--------------Algo---------------*/
 void	ft_indexation(t_stack *stack_a);

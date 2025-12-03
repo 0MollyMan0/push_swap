@@ -6,7 +6,7 @@
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 08:20:37 by anfouger          #+#    #+#             */
-/*   Updated: 2025/12/03 15:04:27 by anfouger         ###   ########.fr       */
+/*   Updated: 2025/12/03 14:46:16 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,18 +27,18 @@ t_chunk	*ft_create_chunk(int start, int end, int chunk_size)
 	return (new_chunk);
 }
 
-static void	ft_chunk_add_back(t_chunk *lst, t_chunk *new)
+static void	ft_chunk_add_back(t_chunk **lst, t_chunk *new)
 {
 	t_chunk	*last;
 
-	if (!new)
+	if (!lst || !new)
 		return ;
-	if (!lst)
+	if (!(*lst))
 	{
-		lst = new;
+		(*lst) = new;
 		return ;
 	}
-	last = lst;
+	last = (*lst);
 	while (last->next)
 		last = last->next;
 	last->next = new;
