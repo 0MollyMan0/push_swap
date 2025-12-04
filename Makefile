@@ -48,6 +48,7 @@ SRC := \
     $(ALGO_DIR)/ft_indexation.c \
     $(ALGO_DIR)/ft_chunking.c \
     $(ALGO_DIR)/ft_free_chunk.c \
+    $(ALGO_DIR)/ft_sort.c \
     $(PARSING_DIR)/ft_parsing.c \
     $(PARSING_DIR)/ft_verif_num.c \
     $(PARSING_DIR)/ft_verif_max.c \

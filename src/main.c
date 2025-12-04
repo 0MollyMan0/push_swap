@@ -6,7 +6,7 @@
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 09:25:37 by anfouger          #+#    #+#             */
-/*   Updated: 2025/12/03 11:37:16 by anfouger         ###   ########.fr       */
+/*   Updated: 2025/12/04 10:01:31 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ int main(int ac, char **av)
 	char	**split;
 	t_stack	*stack_a;
 	t_stack	*stack_b;
-	t_chunk *chunk;
+	// t_chunk *chunk;
 	int 	i;
 
 	printf("%s", "\n/*----------Debut de ce test-----------*/\n");
@@ -95,26 +95,33 @@ int main(int ac, char **av)
 	printf("\n%s\n", "Stack_b:");
 	print_stack_index(stack_b);
 
-	printf("%s", "\n/*----Test Chunking----*/\n\n");
-	chunk = ft_chunking(stack_a->size);
-	t_chunk *tmp = chunk;
-	while (tmp)
-	{
-		printf("chunk start = %d  chunk end = %d  chunk size = %d\n", tmp->start, tmp->end, tmp->size);
-		tmp = tmp->next;
-	}
+	// printf("%s", "\n/*----Test Chunking----*/\n\n");
+	// chunk = ft_chunking(stack_a->size);
+	// t_chunk *tmp = chunk;
+	// while (tmp)
+	// {
+	// 	printf("chunk start = %d  chunk end = %d  chunk size = %d\n", tmp->start, tmp->end, tmp->size);
+	// 	tmp = tmp->next;
+	// }
 	
-	printf("%s", "\n/*----Test 3 Push A vers B----*/\n\n");
-	pb(&stack_a, &stack_b);
-	pb(&stack_a, &stack_b);
-	pb(&stack_a, &stack_b);
+	// printf("%s", "\n/*----Test 3 Push A vers B----*/\n\n");
+	// pb(&stack_a, &stack_b);
+	// pb(&stack_a, &stack_b);
+	// pb(&stack_a, &stack_b);
+	// printf("\n%s\n", "Stack_a:");
+	// print_stack_data(stack_a);
+	// printf("\n%s\n", "Stack_b:");
+	// print_stack_data(stack_b);
+	
+	printf("%s", "\n/*----Test sort----*/\n\n");
+	ft_sort(&stack_a, &stack_b);
 	printf("\n%s\n", "Stack_a:");
-	print_stack_data(stack_a);
+	print_stack_index(stack_a);
 	printf("\n%s\n", "Stack_b:");
-	print_stack_data(stack_b);
+	print_stack_index(stack_b);
 	
 	printf("%s", "\n/*----------Fin de ce test-----------*/\n\n");
-	ft_free_chunk(chunk);
+	// ft_free_chunk(chunk);
 	ft_free_stack(stack_a);
 	ft_free_stack(stack_b);
 	
