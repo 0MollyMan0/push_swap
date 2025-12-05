@@ -46,6 +46,7 @@ SRC := \
     $(CMD_DIR)/push.c \
     $(CMD_DIR)/swap.c \
     $(ALGO_DIR)/ft_indexation.c \
+    $(ALGO_DIR)/ft_sort_small.c \
     $(ALGO_DIR)/ft_chunking.c \
     $(ALGO_DIR)/ft_free_chunk.c \
     $(ALGO_DIR)/ft_sort.c \
