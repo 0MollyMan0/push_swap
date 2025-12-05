@@ -6,7 +6,7 @@
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 11:36:17 by anfouger          #+#    #+#             */
-/*   Updated: 2025/11/28 01:07:25 by anfouger         ###   ########.fr       */
+/*   Updated: 2025/12/05 10:21:09 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,9 @@ void	sa(t_stack **stack)
 	tmp = (*stack)->top->data;
 	(*stack)->top->data = (*stack)->top->next->data;
 	(*stack)->top->next->data = tmp;
+	tmp = (*stack)->top->index;
+	(*stack)->top->index = (*stack)->top->next->index;
+	(*stack)->top->next->index = tmp;
 	write(1, "sa\n", 3);
 }
 
@@ -33,6 +36,9 @@ void	sb(t_stack **stack)
 	tmp = (*stack)->top->data;
 	(*stack)->top->data = (*stack)->top->next->data;
 	(*stack)->top->next->data = tmp;
+	tmp = (*stack)->top->index;
+	(*stack)->top->index = (*stack)->top->next->index;
+	(*stack)->top->next->index = tmp;
 	write(1, "sb\n", 3);
 }
 
@@ -49,5 +55,11 @@ void	ss(t_stack **stack_a, t_stack **stack_b)
 	tmp = (*stack_b)->top->data;
 	(*stack_b)->top->data = (*stack_b)->top->next->data;
 	(*stack_b)->top->next->data = tmp;
+	tmp = (*stack_a)->top->index;
+	(*stack_a)->top->index = (*stack_a)->top->next->index;
+	(*stack_a)->top->next->index = tmp;
+	tmp = (*stack_b)->top->index;
+	(*stack_b)->top->index = (*stack_b)->top->next->index;
+	(*stack_b)->top->next->index = tmp;
 	write(1, "ss\n", 3);
 }
