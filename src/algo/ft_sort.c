@@ -6,7 +6,7 @@
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 16:03:44 by anfouger          #+#    #+#             */
-/*   Updated: 2025/12/04 09:30:16 by anfouger         ###   ########.fr       */
+/*   Updated: 2025/12/05 11:44:42 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@ void	ft_sort(t_stack **stack_a, t_stack **stack_b)
 {
 	t_chunk	*chunks;
 	
-	// if ((*stack_a)->size < 5)
-	// 	ft_sort_small(&(*stack_a), &(*stack_b), &chunks);
-	// else
-	// {
+	if ((*stack_a)->size <= 5)
+		ft_sort_small(stack_a, stack_b);
+	else
+	{
 		chunks = ft_chunking((*stack_a)->size);
 		ft_first_part(stack_a, stack_b, &chunks);
-	// }
+	}
 }
 
 void	ft_first_part(t_stack **stack_a, t_stack **stack_b, t_chunk **chunks)

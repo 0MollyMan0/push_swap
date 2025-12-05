@@ -6,7 +6,7 @@
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 16:02:30 by anfouger          #+#    #+#             */
-/*   Updated: 2025/12/05 10:22:53 by anfouger         ###   ########.fr       */
+/*   Updated: 2025/12/05 11:42:20 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,24 @@ static void	ft_sort_three(t_stack **stack_a)
 		ra(stack_a);
 }
 
+static void	ft_sort_four(t_stack **stack_a, t_stack **stack_b)
+{
+	ft_bring_top(stack_a, 4);
+	pb(stack_a, stack_b);
+	ft_sort_three(stack_a);
+	pa(stack_a, stack_b);
+	ra(stack_a);
+}
+
+static void	ft_sort_five(t_stack **stack_a, t_stack **stack_b)
+{
+	ft_bring_top(stack_a, 5);
+	pb(stack_a, stack_b);
+	ft_sort_four(stack_a, stack_b);
+	pa(stack_a, stack_b);
+	ra(stack_a);
+}
+
 void	ft_sort_small(t_stack **stack_a, t_stack **stack_b)
 {
 	if ((*stack_a)->size == 2)
@@ -45,7 +63,7 @@ void	ft_sort_small(t_stack **stack_a, t_stack **stack_b)
 	if ((*stack_a)->size == 3)
 		ft_sort_three(stack_a);
 	if ((*stack_a)->size == 4)
-		ft_sort_four();
+		ft_sort_four(stack_a, stack_b);
 	if ((*stack_a)->size == 5)
-		ft_sort_five();
+		ft_sort_five(stack_a, stack_b);
 }
