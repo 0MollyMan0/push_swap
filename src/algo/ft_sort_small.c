@@ -6,7 +6,7 @@
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 16:02:30 by anfouger          #+#    #+#             */
-/*   Updated: 2025/12/05 11:42:20 by anfouger         ###   ########.fr       */
+/*   Updated: 2025/12/05 11:55:27 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static void	ft_sort_three(t_stack **stack_a)
 
 static void	ft_sort_four(t_stack **stack_a, t_stack **stack_b)
 {
-	ft_bring_top(stack_a, 4);
+	ft_bring_top(stack_a, 3);
 	pb(stack_a, stack_b);
 	ft_sort_three(stack_a);
 	pa(stack_a, stack_b);
@@ -49,7 +49,7 @@ static void	ft_sort_four(t_stack **stack_a, t_stack **stack_b)
 
 static void	ft_sort_five(t_stack **stack_a, t_stack **stack_b)
 {
-	ft_bring_top(stack_a, 5);
+	ft_bring_top(stack_a, 4);
 	pb(stack_a, stack_b);
 	ft_sort_four(stack_a, stack_b);
 	pa(stack_a, stack_b);
