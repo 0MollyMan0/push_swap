@@ -6,7 +6,7 @@
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 11:37:14 by anfouger          #+#    #+#             */
-/*   Updated: 2025/11/28 01:14:10 by anfouger         ###   ########.fr       */
+/*   Updated: 2025/12/05 13:22:18 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	rra(t_stack **stack)
 	if (!(*stack) || !(*stack)->top || (*stack)->size < 2)
 		return ;
 	(*stack)->top = (*stack)->top->prev;
-	write(1, "rra\n", 3);
+	write(1, "rra\n", 4);
 }
 
 void	rrb(t_stack **stack)
@@ -25,7 +25,7 @@ void	rrb(t_stack **stack)
 	if (!(*stack) || !(*stack)->top || (*stack)->size < 2)
 		return ;
 	(*stack)->top = (*stack)->top->prev;
-	write(1, "rrb\n", 3);
+	write(1, "rrb\n", 4);
 }
 
 void	rrr(t_stack **stack_a, t_stack **stack_b)
@@ -35,5 +35,5 @@ void	rrr(t_stack **stack_a, t_stack **stack_b)
 		return ;
 	(*stack_a)->top = (*stack_a)->top->prev;
 	(*stack_b)->top = (*stack_b)->top->prev;
-	write(1, "rrr\n", 3);
+	write(1, "rrr\n", 4);
 }
