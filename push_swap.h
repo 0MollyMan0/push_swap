@@ -6,7 +6,7 @@
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 16:20:39 by anfouger          #+#    #+#             */
-/*   Updated: 2025/12/08 15:01:49 by anfouger         ###   ########.fr       */
+/*   Updated: 2025/12/08 15:37:20 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,7 @@ void	pa(t_stack **stack_a, t_stack **stack_b);
 void	pb(t_stack **stack_a, t_stack **stack_b);
 
 /*--------------Algo---------------*/
+int		ft_is_sorted(t_stack	*stack);
 void	ft_bring_top(t_stack **stack, int index);
 void	ft_bring_chunk_top(t_stack **stack, int start, int end);
 void    ft_sort_small(t_stack **stack_a, t_stack **stack_b);

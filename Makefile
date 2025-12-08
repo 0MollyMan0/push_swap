@@ -45,6 +45,7 @@ SRC := \
     $(CMD_DIR)/reverse_rotate.c \
     $(CMD_DIR)/push.c \
     $(CMD_DIR)/swap.c \
+    $(ALGO_DIR)/ft_is_sorted.c \
     $(ALGO_DIR)/ft_indexation.c \
     $(ALGO_DIR)/ft_bring_top.c \
     $(ALGO_DIR)/ft_sort_small.c \

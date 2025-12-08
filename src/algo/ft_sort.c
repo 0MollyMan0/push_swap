@@ -6,7 +6,7 @@
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 16:03:44 by anfouger          #+#    #+#             */
-/*   Updated: 2025/12/06 12:28:01 by anfouger         ###   ########.fr       */
+/*   Updated: 2025/12/08 15:43:40 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	ft_sort(t_stack **stack_a, t_stack **stack_b)
 	t_chunk	*chunks;
 	int		count;
 	
+	// if (ft_is_sorted((*stack_a)))
+	// 	return ;
 	if ((*stack_a)->size <= 5)
 	{
 		ft_sort_small(stack_a, stack_b);
