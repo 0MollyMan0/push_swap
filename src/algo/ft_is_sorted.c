@@ -1,39 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_verif_num.c                                     :+:      :+:    :+:   */
+/*   ft_is_sorted.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/15 13:10:03 by anfouger          #+#    #+#             */
-/*   Updated: 2025/12/08 15:27:57 by anfouger         ###   ########.fr       */
+/*   Created: 2025/12/08 15:29:39 by anfouger          #+#    #+#             */
+/*   Updated: 2025/12/08 15:29:40 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <push_swap.h>
-
-int	ft_verif_num(char **split)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	if (!split)
-		return (0);
-	while (split[i])
-	{
-		j = 0;
-		while (split[i][j])
-		{
-			if (!(split[i][j] >= '0' && split[i][j] <= '9') &&
-				!(split[i][j] == '-' && j == 0) && 
-				!(split[i][j] == '+' && j == 0))
-			{
-				return (0);
-			}
-			j++;
-		}
-		i++;
-	}
-	return (1);
-}

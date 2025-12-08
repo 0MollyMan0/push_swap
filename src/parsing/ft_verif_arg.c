@@ -1,37 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_verif_arg.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/24 09:25:37 by anfouger          #+#    #+#             */
-/*   Updated: 2025/12/08 14:07:17 by anfouger         ###   ########.fr       */
+/*   Created: 2025/12/08 13:45:11 by anfouger          #+#    #+#             */
+/*   Updated: 2025/12/08 15:15:10 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 
-int main(int ac, char **av)
+int	ft_verif_arg(int ac, char **av)
 {
-	char	**split;
-	t_stack	*stack_a;
-	t_stack	*stack_b;
-	int 	i;
+	int	i;
+	int	j;
+	int	flag;
 
-	i = 0;
-	if (ac < 2)
-		return (0);
-	split = ft_parsing(ac, av);
-	if (!split)
-		return (0);
-	stack_a = ft_create_stack_a(split);
-	free_tab(split);
-	stack_b = ft_create_stack_b();
-	ft_indexation(stack_a);
-	ft_sort(&stack_a, &stack_b);
-	ft_free_stack(stack_a);
-	ft_free_stack(stack_b);
-	
-	return (0);
+	i = 1;
+	while (i < ac)
+	{
+		j = 0;
+		flag = 0;
+		while (av[i][j])
+		{
+			if (av[i][j] >= '0' && av[i][j] <= '9')
+				flag = 1;
+			j++;
+		}
+		if (!flag)
+		{
+			write(2, "Error\n", 6);
+			return(0);
+		}
+		i++;
+	}
+	return (1);
 }

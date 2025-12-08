@@ -6,7 +6,7 @@
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 16:20:39 by anfouger          #+#    #+#             */
-/*   Updated: 2025/12/06 12:06:03 by anfouger         ###   ########.fr       */
+/*   Updated: 2025/12/08 15:01:49 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ void	ft_lstadd_front(t_node **lst, t_node *new);
 void	ft_lstadd_back(t_node **lst, t_node *new, int size);
 
 /*-------------Parsing-------------*/
+int		ft_verif_arg(int ac, char **av);
 int		ft_verif_num(char **split);
 int		ft_verif_same(char **split);
 int		ft_verif_max(char **spit);
