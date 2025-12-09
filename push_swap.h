@@ -6,7 +6,7 @@
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 16:20:39 by anfouger          #+#    #+#             */
-/*   Updated: 2025/12/08 15:37:20 by anfouger         ###   ########.fr       */
+/*   Updated: 2025/12/09 10:42:47 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,11 +83,13 @@ void	pb(t_stack **stack_a, t_stack **stack_b);
 
 /*--------------Algo---------------*/
 int		ft_is_sorted(t_stack	*stack);
-void	ft_bring_top(t_stack **stack, int index);
+void	ft_bring_top_a(t_stack **stack, int index);
+void	ft_bring_top_b(t_stack **stack, int index);
 void	ft_bring_chunk_top(t_stack **stack, int start, int end);
 void    ft_sort_small(t_stack **stack_a, t_stack **stack_b);
 void	ft_indexation(t_stack *stack_a);
 t_chunk	*ft_chunking(int size);
 void	ft_free_chunk(t_chunk *chunk);
 void	ft_sort(t_stack **stack_a, t_stack **stack_b);
-void	ft_first_part(t_stack **stack_a, t_stack **stack_b, t_chunk **chunks);
+void	ft_to_a(t_stack **stack_a, t_stack **stack_b);
+void	ft_to_b(t_stack **stack_a, t_stack **stack_b, t_chunk **chunks);

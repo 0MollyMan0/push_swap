@@ -6,13 +6,13 @@
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 10:23:48 by anfouger          #+#    #+#             */
-/*   Updated: 2025/12/09 10:24:21 by anfouger         ###   ########.fr       */
+/*   Updated: 2025/12/09 10:35:48 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 
-void	ft_bring_top(t_stack **stack, int index)
+void	ft_bring_top_b(t_stack **stack, int index)
 {
 	t_node	*node;
 	int		count;
@@ -33,6 +33,30 @@ void	ft_bring_top(t_stack **stack, int index)
 	{
 		while ((*stack)->top->index != index)
 			rb(stack);
+	}	
+}
+
+void	ft_bring_top_a(t_stack **stack, int index)
+{
+	t_node	*node;
+	int		count;
+
+	count = 0;
+	node = (*stack)->top;
+	while (node->index != index)
+	{
+		count++;
+		node = node->next;
+	}
+	if (count > (*stack)->size / 2)
+	{
+		while ((*stack)->top->index != index)
+			rra(stack);
+	}
+	else
+	{
+		while ((*stack)->top->index != index)
+			ra(stack);
 	}	
 }
 
