@@ -6,7 +6,7 @@
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 10:23:48 by anfouger          #+#    #+#             */
-/*   Updated: 2025/12/09 10:35:48 by anfouger         ###   ########.fr       */
+/*   Updated: 2025/12/09 13:40:59 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,28 +60,55 @@ void	ft_bring_top_a(t_stack **stack, int index)
 	}	
 }
 
-void	ft_bring_chunk_top(t_stack **stack, int start, int end)
+static int	ft_calc_rra(t_stack **stack_a, int start, int end)
 {
 	t_node	*node;
 	int		count;
-	int		index;
 
+	node = (*stack_a)->top->prev;
 	count = 0;
-	node = (*stack)->top;
 	while (!(node->index >= start && node->index <= end))
 	{
-		count++;
-		index = node->index;
-		node = node->next;
+		node = node->prev;
+		count++;	
 	}
-	if (count > (*stack)->size / 2)
+	return (count);
+}
+
+static int	ft_calc_ra(t_stack **stack_a, int start, int end)
+{
+	t_node	*node;
+	int		count;
+
+	node = (*stack_a)->top;
+	count = 0;
+	while (!(node->index >= start && node->index <= end))
 	{
-		while ((*stack)->top->index != index)
-			rra(stack);
+		node = node->next;
+		count++;	
+	}
+	return (count);
+}
+
+void	ft_bring_chunk_top(t_stack **stack_a, int start, int end)
+{
+	int		count_rra;
+	int		count_ra;
+
+	count_rra = ft_calc_rra(stack_a, start, end);
+	count_ra = ft_calc_ra(stack_a, start, end);
+	if (count_ra > count_rra)
+	{
+		while (!((*stack_a)->top->index >= start && 
+				(*stack_a)->top->index <= end))
+			rra(stack_a);
 	}
 	else
 	{
-		while ((*stack)->top->index != index)
-			ra(stack);
-	}	
+		while (!((*stack_a)->top->index >= start 
+				&& (*stack_a)->top->index <= end))
+			ra(stack_a);
+	}
 }
+
+
