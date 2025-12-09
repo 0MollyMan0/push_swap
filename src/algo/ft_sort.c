@@ -6,7 +6,7 @@
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 16:03:44 by anfouger          #+#    #+#             */
-/*   Updated: 2025/12/09 13:31:17 by anfouger         ###   ########.fr       */
+/*   Updated: 2025/12/09 14:20:34 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void	ft_to_b(t_stack **stack_a, t_stack **stack_b, t_chunk **chunks)
 		{
 			pb(stack_a, stack_b);
 			chunk->count++;
-			if ((*stack_b)->size > 1 && (*stack_b)->top->index % 2 == 0)
+			if ((*stack_b)->size > 1 && (*stack_b)->top->index > ((chunk->size/2) + chunk->start)) //((*stack_b)->size > 1 && (*stack_b)->top->index % 2 == 0)
 				rb(stack_b);
 		}
 		else
