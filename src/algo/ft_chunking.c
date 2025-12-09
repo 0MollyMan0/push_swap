@@ -6,7 +6,7 @@
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 08:20:37 by anfouger          #+#    #+#             */
-/*   Updated: 2025/12/09 12:06:02 by anfouger         ###   ########.fr       */
+/*   Updated: 2025/12/09 14:32:22 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,16 +44,16 @@ static void	ft_chunk_add_back(t_chunk **lst, t_chunk *new)
 	last->next = new;
 }
 
-t_chunk		*ft_chunking(int size)
+t_chunk	*ft_chunking(int size)
 {
 	int		chunk_size;
 	int		i;
 	t_chunk	*chunk;
-	t_chunk *tmp;
-	
+	t_chunk	*tmp;
+
 	chunk_size = (int)sqrt((double)size) + 1;
 	chunk = NULL;
-	i  = 0;
+	i = 0;
 	while (i + chunk_size <= size)
 	{
 		tmp = ft_create_chunk(i, i + chunk_size - 1, chunk_size);

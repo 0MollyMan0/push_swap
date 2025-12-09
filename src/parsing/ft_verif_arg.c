@@ -6,7 +6,7 @@
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 13:45:11 by anfouger          #+#    #+#             */
-/*   Updated: 2025/12/08 15:15:10 by anfouger         ###   ########.fr       */
+/*   Updated: 2025/12/09 14:27:24 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	ft_verif_arg(int ac, char **av)
 		if (!flag)
 		{
 			write(2, "Error\n", 6);
-			return(0);
+			return (0);
 		}
 		i++;
 	}

@@ -6,38 +6,38 @@
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 16:03:44 by anfouger          #+#    #+#             */
-/*   Updated: 2025/12/09 14:20:34 by anfouger         ###   ########.fr       */
+/*   Updated: 2025/12/09 14:31:30 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 #include <stdio.h>
 
-int    get_max_index(t_stack *stack)
+int	get_max_index(t_stack *stack)
 {
-    int		max;
+	int		max;
 	int		i;
 	t_node	*node;
 
 	i = 0;
-    if (!stack)
-        return (0);
-    max = stack->top->index;
+	if (!stack)
+		return (0);
+	max = stack->top->index;
 	node = stack->top;
-    while (stack->size != i)
-    {
-        if (node->index > max)
-            max = node->index;
-        node = node->next;
+	while (stack->size != i)
+	{
+		if (node->index > max)
+			max = node->index;
+		node = node->next;
 		i++;
-    }
-    return (max);
+	}
+	return (max);
 }
 
 void	ft_sort(t_stack **stack_a, t_stack **stack_b)
 {
 	t_chunk	*chunks;
-	
+
 	if (ft_is_sorted((*stack_a)))
 		return ;
 	if ((*stack_a)->size <= 5)
@@ -50,13 +50,14 @@ void	ft_sort(t_stack **stack_a, t_stack **stack_b)
 		chunks = ft_chunking((*stack_a)->size);
 		ft_to_b(stack_a, stack_b, &chunks);
 		ft_to_a(stack_a, stack_b);
+		ft_free_chunk(chunks);
 	}
 }
-
 
 void	ft_to_a(t_stack **stack_a, t_stack **stack_b)
 {
 	int		max;
+
 	while ((*stack_b)->size != 0)
 	{
 		max = get_max_index((*stack_b));
@@ -68,10 +69,9 @@ void	ft_to_a(t_stack **stack_a, t_stack **stack_b)
 void	ft_to_b(t_stack **stack_a, t_stack **stack_b, t_chunk **chunks)
 {
 	t_node	*node;
-	t_chunk *chunk;
+	t_chunk	*chunk;
 
 	chunk = (*chunks);
-	
 	while ((*stack_a)->size != 0)
 	{
 		node = (*stack_a)->top;
@@ -79,7 +79,8 @@ void	ft_to_b(t_stack **stack_a, t_stack **stack_b, t_chunk **chunks)
 		{
 			pb(stack_a, stack_b);
 			chunk->count++;
-			if ((*stack_b)->size > 1 && (*stack_b)->top->index > ((chunk->size/2) + chunk->start)) //((*stack_b)->size > 1 && (*stack_b)->top->index % 2 == 0)
+			if ((*stack_b)->size > 1
+				&& (*stack_b)->top->index > ((chunk->size / 2) + chunk->start))
 				rb(stack_b);
 		}
 		else

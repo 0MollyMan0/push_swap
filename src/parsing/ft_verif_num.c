@@ -6,7 +6,7 @@
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/15 13:10:03 by anfouger          #+#    #+#             */
-/*   Updated: 2025/12/08 15:27:57 by anfouger         ###   ########.fr       */
+/*   Updated: 2025/12/09 14:27:14 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	ft_verif_num(char **split)
 		while (split[i][j])
 		{
 			if (!(split[i][j] >= '0' && split[i][j] <= '9') &&
-				!(split[i][j] == '-' && j == 0) && 
+				!(split[i][j] == '-' && j == 0) &&
 				!(split[i][j] == '+' && j == 0))
 			{
 				return (0);
