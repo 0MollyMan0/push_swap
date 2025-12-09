@@ -6,7 +6,7 @@
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 10:23:48 by anfouger          #+#    #+#             */
-/*   Updated: 2025/12/06 12:05:32 by anfouger         ###   ########.fr       */
+/*   Updated: 2025/12/09 10:24:21 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,12 @@ void	ft_bring_top(t_stack **stack, int index)
 	if (count > (*stack)->size / 2)
 	{
 		while ((*stack)->top->index != index)
-			rra(stack);
+			rrb(stack);
 	}
 	else
 	{
 		while ((*stack)->top->index != index)
-			ra(stack);
+			rb(stack);
 	}	
 }
 
