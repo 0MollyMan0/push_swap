@@ -63,16 +63,6 @@ OBJ := $(SRC:.c=.o)
 # ---- EXECUTABLE ----
 NAME := push_swap
 
-# ---- TESTS ----
-# Place your tests here:
-# Format: TEST += "1 2 3 4" (each test is a string)
-TEST :=
-TEST += "3 3 2 1"
-TEST += "3 3- 2 1"
-TEST += "5 1 4 2 3"
-TEST += "12 34 45 56 67 43 312 98 9 23 52 2 25" 
-# Add as many TEST += "..." as you want
-
 # ---- RULES ----
 all: $(NAME) banner
 
@@ -101,13 +91,5 @@ fclean: clean
 	@echo "$(RED)Program deleted !!$(RESET)"
 
 re: fclean all
-
-# ---- TEST RULE ----
-test: $(NAME)
-	@echo "Running tests..."
-	@for t in $(TEST); do \
-	    echo "\nTest: $$t"; \
-	    ./$(NAME) $$t; \
-	done
 
 .PHONY: all clean fclean re test banner

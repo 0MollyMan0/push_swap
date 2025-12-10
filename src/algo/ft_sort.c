@@ -6,14 +6,14 @@
 /*   By: anfouger <anfouger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 16:03:44 by anfouger          #+#    #+#             */
-/*   Updated: 2025/12/09 14:31:30 by anfouger         ###   ########.fr       */
+/*   Updated: 2025/12/10 14:33:36 by anfouger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 #include <stdio.h>
 
-int	get_max_index(t_stack *stack)
+static int	get_max_index(t_stack *stack)
 {
 	int		max;
 	int		i;
@@ -84,7 +84,7 @@ void	ft_to_b(t_stack **stack_a, t_stack **stack_b, t_chunk **chunks)
 				rb(stack_b);
 		}
 		else
-			ft_bring_chunk_top(stack_a, chunk->start, chunk->end);
+			ra(stack_a);
 		if (chunk->count == chunk->size)
 			chunk = chunk->next;
 	}
