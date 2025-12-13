@@ -83,11 +83,49 @@ and exits with a non-zero status.
 #### Data structures: 
 doubly-linked lists or lightweight linked nodes to represent stacks A and B — chosen for O(1) push/pop and rotation operations.
 
+```c
+typedef struct t_stack
+{
+	struct t_node	*top;
+	int				size;
+}					t_stack;
+
+typedef struct t_node
+{
+	struct t_node	*next;
+	struct t_node	*prev;
+	int				data;
+	int				index;
+}					t_node;
+```
+
 #### Chunking: 
 input is partitioned into value ranges (chunks). Elements are pushed to B chunk by chunk, then reinserted into A in the correct order. Chunk size is tuned relative to input length to balance passes and operation count.
 
+```c
+typedef struct t_chunk
+{
+	struct t_chunk	*next;
+	int				start;
+	int				end;
+	int				size;
+	int				count;				
+}					t_chunk;
+```
+
 #### Butterfly: 
 used in combination with chunking during re-insertion to minimize rotations by inserting elements from both ends (like the wings of a butterfly), reducing total rotations and moves.
+
+```
+---------
+------
+---
+-
+----
+-----
+-------
+
+```
 
 #### Operation minimization: 
 consecutive operations are simplified where possible (ex: combining rotations into rr, or cancelling opposite operations).
@@ -129,18 +167,13 @@ pa
 
 Below are resources used and recommended for understanding algorithms and data structures relevant to this project:
 
-Sorting algorithms overview — GeeksforGeeks (sorting techniques & complexity)
+[Stack - Wikipedia](https://en.wikipedia.org/wiki/Stack_(abstract_data_type))
 
-Radix sort / non-comparative sorting references
+[Stack sortable permutation - Wikipedia](https://en.wikipedia.org/wiki/Stack-sortable_permutation)
 
-Data structures: linked lists and stacks — tutorials & references
+[Data Structures & Algorithms: A Beginner’s Guide to Stacks - Rebecca Ariss](https://rebeccaariss.medium.com/data-structures-algorithms-a-beginners-guide-to-stacks-3409d8928e1c)
 
-42 push_swap subject & common community writeups
-
-Visual algorithm tools (visualizations of stack operations and sorting)
-
-Note: specific URLs are not embedded here; they were collected and consulted during research.
-
+[Sort stack using temporary stack - Shubham Gautam](https://www.enjoyalgorithms.com/blog/sort-stack-using-temporary-stack)
 
 ## AI usage statement
 
@@ -162,6 +195,7 @@ Test edge cases: single value, two values, repeated values (should produce Error
 Use the checker program (if available) to validate the operation sequence against the final stack state.
 
 
+
 ## Contributing / Notes
 
 This repository follows the usual 42 project rules: code must compile, be documented, and pass the project's evaluators.
@@ -169,3 +203,5 @@ This repository follows the usual 42 project rules: code must compile, be docume
 If you want a more detailed implementation README (code layout, modules, function lists, examples of optimizations and benchmarks), tell me which parts of the project you want documented and I’ll expand this file.
 
 End of README
+
+

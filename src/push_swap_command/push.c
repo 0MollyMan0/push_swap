@@ -12,7 +12,7 @@
 
 #include <push_swap.h>
 
-void	del_top(t_stack **stack)
+static void	del_top(t_stack **stack)
 {
 	t_node	*new_top;
 	t_node	*last;
@@ -30,7 +30,7 @@ void	del_top(t_stack **stack)
 	(*stack)->size--;
 }
 
-void	insert_top(t_stack **stack, t_node *new_top)
+static void	insert_top(t_stack **stack, t_node *new_top)
 {
 	t_node	*old_top;
 	t_node	*last;
