@@ -72,7 +72,7 @@ banner :
 	@echo "$(BLUE)██████$(MAGENTA)╔╝$(BLUE)██$(MAGENTA)║   $(BLUE)██$(MAGENTA)║$(BLUE)███████$(MAGENTA)╗$(BLUE)███████$(MAGENTA)║    $(BLUE)███████$(MAGENTA)╗$(BLUE)██$(MAGENTA)║ $(BLUE)█$(MAGENTA)╗ $(BLUE)██$(MAGENTA)║$(BLUE)███████$(MAGENTA)║$(BLUE)██████$(MAGENTA)╔╝$(NC)"
 	@echo "$(BLUE)██$(MAGENTA)╔═══╝ $(BLUE)██$(MAGENTA)║   $(BLUE)██$(MAGENTA)║╚════$(BLUE)██$(MAGENTA)║$(BLUE)██$(MAGENTA)╔══$(BLUE)██$(MAGENTA)║    ╚════$(BLUE)██$(MAGENTA)║$(BLUE)██$(MAGENTA)║$(BLUE)███$(MAGENTA)╗$(BLUE)██$(MAGENTA)║$(BLUE)██$(MAGENTA)╔══$(BLUE)██$(MAGENTA)║$(BLUE)██$(MAGENTA)╔═══╝ $(NC)"
 	@echo "$(BLUE)██$(MAGENTA)║     ╚$(BLUE)██████$(MAGENTA)╔╝$(BLUE)███████$(MAGENTA)║$(BLUE)██$(MAGENTA)║  $(BLUE)██$(MAGENTA)║    $(BLUE)███████$(MAGENTA)║╚$(BLUE)███$(MAGENTA)╔$(BLUE)███$(MAGENTA)╔╝$(BLUE)██$(MAGENTA)║  $(BLUE)██$(MAGENTA)║$(BLUE)██$(MAGENTA)║    $(NC)" 
-	@echo "$(MAGENTA)╚═╝      ╚═════╝ ╚══════╝╚═╝  ╚═╝   ╚══════╝ ╚══╝╚══╝ ╚═╝  ╚═╝╚═╝     $(NC)"
+	@echo "$(MAGENTA)╚═╝      ╚═════╝ ╚══════╝╚═╝  ╚═╝    ╚══════╝ ╚══╝╚══╝ ╚═╝  ╚═╝╚═╝     $(NC)"
                                                                        
 
 $(NAME): $(OBJ)
